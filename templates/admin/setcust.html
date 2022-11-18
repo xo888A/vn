@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>{G:TITLE}</title>
+    <link rel="stylesheet" href="{G:CSS}/backstage.css" />
+    <link rel="stylesheet" href="{G:CSS}/font-awesome.min.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/backstage.js"></script>
+    <style>
+        .category_input{
+            width: 100% !important;
+        }
+    </style>
+</head>
+<body>
+    {template:model:admin:header}
+    {template:model:admin:aside}
+    <div class="wrap">
+        <div class="w100">
+            {template:model:admin:tag}
+            <div class="content">
+                <div class="frame">
+                    <p class="title">Hướng dẫn</p>
+                    <div class="frmtable">
+                    	
+			            <div class="notice">
+			                <div class="note-info">
+			                    <p class="p1 btn3">Cách thao tác</p>
+			                    <p class="pub">1. Các câu hỏi và câu trả lời được đặt trên trang này sẽ được hiển thị trong trung tâm dịch vụ khách hàng của APP, và người dùng có thể chọn nhấp vào đó, sau đó câu trả lời tương ứng sẽ được hiển thị cho người dùng. Để biết chi tiết, vui lòng đối chiều cài đặt APP. .</p>
+			                    <p class="pub">2. Khi kết thúc phần hỏi đáp hệ thống sẽ tự động thêm tùy chọn “dịch vụ khách hàng trực tuyến”, sau khi bấm vào sẽ chuyển sang giao diện trò chuyện “Mecha”, nếu cần đóng lại, bạn vui lòng vào cài đặt nội bộ APP - của tôi - cài đặt hệ thống để đóng.</p>
+			                    <p class="pub">3. <a style="color:red" href="https://app.meiqia.com/chat" target="_blank">Đi vào hậu trường</a></p>
+			                </div>
+			            </div>
+			            
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+        		<div class="frame">
+                    <p class="title">Cài đặt </p>
+                    <div class="frmtable_content">
+                		<table class="w100">
+                			<tbody><tr>
+                				<td>Hỏi</td>
+                				<td><input name="q" placeholder="Câu hỏi không được quá dài. Sau khi cài đặt, vui lòng tham khảo phần hiển thị cụ thể của ứng dụng"></td>
+                			</tr>
+                			<tr>
+                				<td>Đáp</td>
+                				<td><input name="a" placeholder="Tối đa 85 ký tự, vui lòng tham khảo cách hiển thị cụ thể của ứng dụng sau khi cài đặt"></td>
+                			</tr>
+                			<tr>
+                				<td></td>
+                				<td><a href="javascript:;" class="btn submit" rel="addqa"><i class="fa fa-plus-square-o"></i>Thêm</a></td>
+                			</tr>
+                		</tbody></table>
+                	</div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="frame">
+                    <p class="title">Quản lý Hỏi & Đáp</p>
+                    <div class="frmtable">
+                    <table class="w100 list">
+                        {data}
+                    </table>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

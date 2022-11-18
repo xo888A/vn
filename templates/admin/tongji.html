@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>{G:TITLE}</title>
+    <link rel="stylesheet" href="{G:CSS}/backstage.css" />
+    <link rel="stylesheet" href="{G:CSS}/font-awesome.min.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/backstage.js"></script>
+    <style>
+        .category_input{
+            width:100%
+        }
+    </style>
+</head>
+<body>
+    {template:model:admin:header}
+    {template:model:admin:aside}
+    <div class="wrap">
+        <div class="w100">
+            {template:model:admin:tag}
+            <div class="content">
+        		<div class="frame">
+                    <p class="title">Thống kê</p>
+                    <div class="frmtable">
+                    <table class="w100 list">
+                        <tr>
+                            <th>Người quảng cáo</th>
+                            <th>Lịch sử thu nhập (đồng)</th>
+                            <th>IP truy cập</th>
+                            <th>10.000 lượt chuyển đổi IP (đồng)</th>
+                            <th>Chuyển đổi đăng ký (đồng)</th>
+                            <th>Tổng số đăng ký/khấu trừ</th>
+                            <th>Tổng số lượt tải xuống/khấu trừ</th>
+                            <th>Số tiền nạp (đồng)</th>
+                            <th>Số tiền khấu trừ (đồng)</th>
+                            <th>Doanh thu đại lý (đồng)</th>
+                            <th>Doanh thu từ nền tảng (đồng)</th>
+                        </tr>
+                        {data}
+                    </table>
+                    </div>
+                    <div class="fr pat30 w100">
+                        {page}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

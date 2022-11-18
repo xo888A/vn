@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>{G:TITLE}</title>
+    <link rel="stylesheet" href="{G:CSS}/backstage.css" />
+    <link rel="stylesheet" href="{G:CSS}/font-awesome.min.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/backstage.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    {template:model:admin:header}
+    {template:model:admin:aside}
+    <div class="wrap">
+        <div class="w100">
+            {template:model:admin:tag}
+            <div class="content">
+        		<div class="frame">
+        		    <p class="title">Lời khuyên</p>
+        		    <div class="notice">
+		                <div class="note-info">
+		                    <p class="p1 btn3">Lời khuyên</p>
+		                    <p class="pub">【Cộng đồng-Đề xuất】 Vui lòng điền số điện thoại di động, nó sẽ hiển thị tất cả nội dung cộng đồng do người dùng điền, hỗ trợ điền nhiều người, dùng dấu (,) Ví dụ: 18888888888,17777777777</p>
+		                </div>
+		            </div>
+                    <p class="title">Cộng đồng - Cài đặt được đề xuất</p>
+                    <div class="frmtable_content">
+                		<table class="w100">
+                			<tbody>
+                			<tr>
+                				<td>【Cộng đồng-Đề xuất】</td>
+                				<td><input name="organcommentsuser" value="{organcommentsuser}" placeholder="Vui lòng điền số điện thoại di động, phân tách dấu (,) Ví dụ: 18888888888,17777777777"></td>
+                			</tr>
+                			
+                			<tr>
+                				<td></td>
+                				<td><a href="javascript:;" class="btn submit" rel="updateorgancommentsuser"><i class="fa fa-plus-square-o"></i>Cài đặt</a></td>
+                			</tr>
+                		</tbody></table>
+                	</div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Nạp xu vàng</title>
+    <link rel="stylesheet" href="{G:CSS}/style.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/index.js"></script>
+        
+        <style>
+        .wrap2 .fl ul li{
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    {template:model:header}
+    <div class="wrap2 overflow">
+        <div class="fl w100">
+            <div class="fl fls">
+                <p class="u"><img src="{avatar}" /></p>
+                <p class="qiandao">Điểm danh nhận xu vàng</p>
+                <ul class="fun">
+                    <li><a href="{G:INDEX}/index.php?mod=user"><img src="{G:TU}/u1.png" />Trung tâm hội viên</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=edit"><img src="{G:TU}/u7.png" />Quản lý tác phẩm</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=set"><img src="{G:TU}/u2.png" />Cài đặt tài khoản</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=wallet"><img src="{G:TU}/u3.png" />Ví tiền của tôi</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=vip"><img src="{G:TU}/u4.png" />Hội viên nạp tiền</a></li>
+                    <li class="selected"><a href="{G:INDEX}/index.php?mod=money"><img src="{G:TU}/u5_.png" />Nạp xu vàng</a></li>
+                    <!--<li><a href="{G:INDEX}/index.php?mod=card"><img src="{G:TU}/u6.png" />Đổi mã thẻ</a></li>-->
+                    <li><a href="{G:INDEX}/index.php?mod=concern"><img src="{G:TU}/u7.png" />Theo dõi của tôi</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=albuy"><img src="{G:TU}/u8.png" />Video đã mua</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=customer"><img src="{G:TU}/u9.png" />Trung tâm Chăm sóc khách hàng</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=message"><img src="{G:TU}/u10.png" />Trung tâm thông báo</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=shares"><img src="{G:TU}/u11.png" />Quảng cáo kiếm tiền</a></li>
+                    <li class="logout"><a href="{G:INDEX}/index.php?mod=logout "><img src="{G:TU}/u12.png" />Đăng xuất tài khoản</a></li>
+                </ul>
+            </div>
+            <script>
+                    $(function(){
+                        $('.onclick p').click(function(){
+                            $('.onclick p').attr('class','');
+                            var rel = $(this).attr("rel");
+                            $(this).attr('class','selected');
+                            if(rel=="1"){
+                                $('.npart1').show();
+                                $('.npart2').hide();
+                                $('.npart3').hide();
+                            }else if(rel=='2'){
+                                $('.npart1').hide();
+                                $('.npart2').show();
+                                $('.npart3').hide();
+                            }else if(rel=='3'){
+                                $('.npart1').hide();
+                                $('.npart2').hide();
+                                $('.npart3').show();
+                            }
+                        });
+                        $('.tx li').click(function(){
+                            $('.tx li').attr('class','');
+                            $(this).attr('class','selected');
+                        });
+                    });
+                </script>
+            <div class="fl flr">
+               <div class="top rel ntop">
+                    <img class="abs" src="{G:TU}/vipbg.png">
+                    <p class="l1 abs"><img src="{avatar}" /></p>
+                    <div class="l2 abs">
+                        <p class="tel">{tel}{level}</p>
+                        <p class="endtime">Số dư:{diam}đồng</p>
+                    </div>
+                    <div class="l3 abs onclick">
+                        <p class="selected" rel="1">Nạp xu vàng</p>
+                        <!--<p rel="2">Dùng mã thẻ đổi xu vàng</p>-->
+                        <p rel="2">Câu hỏi thường gặp</p>
+                    </div>
+               </div> 
+               <!--part1-->
+               <div class="npart1 ">
+                   <p class="btit">Vui lòng chọn số xu muốn nạp.<span class="fr"><a style="color:#FF7AA5" href="{G:INDEX}/index.php?mod=customer">Cần hỗ trợ từ dịch vụ Chăm sóc khách hàng.</a></span></p>
+                   <ul class="width3 overflow jinbi diampay">
+                       {diams}
+                   </ul>
+                   <div class="not">
+                       <div class="w">
+                           <p><span>Lưu ý khi mua hàng:</span>{miaoshu2}</p>
+                       </div>
+                   </div>
+                   <div class="morder">
+                       <p>Số tiền nạp:<span class="s1">¥<strong>0</strong>元</span><span class="s2">Đã chọn: <strong>Chưa chọn</strong></span>
+                       </p>
+                       
+                       
+                       <a href="javascript:;" class="gopay2 fr" id="" style="margin-top: 30px;">Bước tiếp theo</a></div>
+                   
+               </div>
+               <!--part2-->
+               <!--<div class="part4 npart2 part overflow iuy hide">-->
+               <!--     <p class="notice" style="font-size:24px;margin-top:20px">Sử dụng mã thẻ đổi VIP/xu vàng</p>-->
+               <!--     <p class="button button2 s"><input class='covertcard' placeholder="请输入卡密"  style="width: 49.8%;" /></p>-->
+               <!--     <p class="pubbtn covertcardbtn" style="margin:20px 0 10px">Xác nhận đổi</p>-->
+               <!--     <p class="notice a">1.Mỗi mã thẻ chỉ được sử dụng 1 lần</p>-->
+               <!--     <p class="notice a">2.Sao chép và dán mã thẻ đã mua vào ô bên trên để tiến hành đổi</p>-->
+               <!--     <p class="notice a">3.Trường hợp cần trợ giúp, vui lòng liên hệ với bộ phận chăm sóc khách hàng</p>-->
+               <!-- </div>-->
+                <!--part3-->
+               <div class="npart2 overflow addpt3 hide">
+                    <p class="notice y" style="font-size:24px;margin-top:20px">Vấn đề thường gặp/Câu hỏi cần hỗ trợ</p>
+                    <ul class="overflow answer">
+                         {answer}
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    {template:model:footer}
+    <script>
+        $(function(){
+            $('.diampay li').click(function(){
+                var s1 = $(this).find('.s1').text();
+                var id = $(this).find("input[name=id]").val();
+                $('.diampay li img.vipselect').remove();
+                var ele = $(this).find('.vipselect').attr('class');
+                if(ele==undefined || !ele){
+                    $(this).append("<img class='abs vipselect' src='./static/img/web/s.png'>");
+                }
+                $('.morder span.s1 strong').text(s1);
+                $('.morder span.s2 strong').text($(this).find('.y1').text()+"金币卡");
+                $('.gopay2').attr('id',id)
+            });
+            $('.gopay').click(function(){
+                var id = $(this).attr('id');
+                alert("支付ID:"+id);
+            });
+            $('.gopay2').click(function(){
+                var id = $(this).attr('id');
+                ajax('gopay',"id="+id+"&type=jinbi");
+            });
+        });
+    </script>
+</body>
+
+</html>

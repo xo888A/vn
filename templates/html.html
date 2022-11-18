@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>{name}</title>
+    <meta name="keywords" content="关键词" />
+    <meta name="description" content="首页描述" />
+    <link rel="stylesheet" href="{G:CSS}/style.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/index.js"></script>
+    <style>
+        .content{
+            line-height: 23px;
+        }
+        .content img{
+            max-width: 100%;
+            margin:5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    {template:model:header}
+    <div class="wrap">
+        <h3 class='w100 fl center h3'>{name}</h3>
+        <div class="content fl">{content}</div>
+        <div class="clear"></div>
+        <div class="pl" style="margin-top:20px">
+            <div contentEditable="{notlogins}"  name="textarea" class="textarea">
+                    {notlogin}
+                </div>
+                <!--<textarea placeholder="我来说两句~~" name="textarea" class="textarea"></textarea>-->
+                <div class="bq rel">
+                    <div><p class="control" rel="1"><img class="b c" src="{G:TU}/b1.png" />Biểu cảm</p><a postid='{id}' class="fr fabiao2" href="javascript:;" tel2='' commentid=''>Gửi bình luận</a></div>
+                    <div class="biaoqing abs hide" >
+                        <p class="index" style="margin-bottom: 4px;"><a class="biaoqing1" href="javascript:;">Biểu cảm</a></p>
+                        <ul class="overflow biaoqing2">
+                            {biaoqing}
+                        </ul>
+                   
+                    </div>
+                </div>
+                <p class="ptit">Toàn bộ bình luận<span>{pinglun}</span></p>
+                <div class="pinglun">
+                    {cms}
+                </div>
+        </div>
+    </div>
+    {template:model:footer}
+    <script>
+        $(function(){
+            
+            $('.control').click(function(){
+                var rel = $(this).attr('rel');
+                rel = parseInt(rel);
+                if(rel==1){
+                    $('.c.b').attr('src',"{G:TU}/b2.png");
+                    $('.biaoqing').show();
+                    $(this).attr('rel',0);
+                }else{
+                    $('.c.b').attr('src',"{G:TU}/b1.png");
+                    $('.biaoqing').hide();
+                    $(this).attr('rel',1);
+                }
+            });
+
+            
+        });
+    </script>
+</body>
+
+</html>

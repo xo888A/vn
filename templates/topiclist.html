@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>{name}</title>
+    <link rel="stylesheet" href="{G:CSS}/style.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/index.js"></script>
+</head>
+
+<body>
+    {template:model:header}
+    <div class="wrap">
+        <section class="section3">
+            <div class="w100 fl">
+                <p class="fl img2"><img  src="{avatar}" /></p>
+                <div class="fr w88">
+                    <div class="u2  w100"><p>#{name}</p><p class="listtype">{tuijian}</div>
+                    <p class="content">{num}Nội dung</p>
+                    <p class="desc">{desces}</p>
+                    <div class="flex flex2">
+                        <ul class="add8">
+                            <li class="{s1}"><p class="abs"></p><a href="{G:INDEX}/index.php?mod=topiclist&id={id}">Hoạt động</a></li>
+                            <li class="{s2}"><p class="abs"></p><a href="{G:INDEX}/index.php?mod=topiclist&type=video&id={id}">Video</a></li>
+                            <li class="{s3}"><p class="abs"></p><a href="{G:INDEX}/index.php?mod=topiclist&type=organ&id={id}">Cộng đồng</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="clear"></div>
+            </div>
+        </section>
+        <section class="public">
+            <ul class="useradd overflow width1">
+                {data}
+            </ul>
+            {page}
+            <div class="clear"></div>
+        </section>
+    </div>
+    {template:model:footer}
+
+</body>
+
+</html>

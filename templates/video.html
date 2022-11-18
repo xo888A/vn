@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>{title}</title>
+    <link rel="stylesheet" href="{G:CSS}/style.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/index.js"></script>
+    <script src="{G:JS}/flv.min.js"></script>
+    <script src="{G:JS}/hls.min.js"></script>
+    <script src="{G:JS}/DPlayer.min.js"></script>
+    <script src="{G:JS}/copy.js"></script>
+
+</head>
+
+<body>
+    {template:model:header}
+    <div class="wrap">
+        <div class="video">
+            <div class="fl">
+                {maincontent}
+                <div class="vidmsg">
+                    <div class="fl">
+                        <p class="a">{liked}</p>
+                        <!--<p><a href="javascript:;" class="godown" rel='{rel}'><img src="{G:TU}/vv2.png" /><span>下载</span></a></p>-->
+                        <p class="two"><img src="{G:TU}/vv3.png" /><span>{pinglun}</span></p>
+                        <p><a href="{G:INDEX}/index.php?mod=shares"><img src="{G:TU}/vv4.png" /><span>Kiếm tiền quảng cáo</span></a></p>
+                        <p><a href="{G:INDEX}/index.php?mod=shares"><img src="{G:TU}/vv5.png" /><span>Chia sẻ để nhận VIP</span></a></p>
+                    </div>
+                    <div class="fr" style="width:100px">
+                        <p><a href="{G:INDEX}/download.html"><img src="{G:TU}/download.png" /><span>tải</span></a></p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="user rel">
+                    <a href="{G:INDEX}/index.php?mod=author&id={usertel}"><img class="avatar" src="{user_avatar}" /></a>
+                    <p class="abs nicknames"><a href="{G:INDEX}/index.php?mod=author&id={usertel}">{user_nickname}</a><img class="sex" src="{G:TU}/{user_sex}.png"></p>
+                    <p class="m abs"><span class="n fs">{user_follow} Phần thưởng</span><span>{user_descs}</span></p>
+                    <p class="abs guanzhu">{guanzhu}</p>
+                </div>
+                <h3>{title}</h3>
+                <p class="ts"><img src="{G:TU}/a.png" />{time}<img src="{G:TU}/b.png" class="b" />{look}<img class="c" src="{G:TU}/c.png" />{like}</p>
+                <ul class="category overflow">
+                    <li class="a"><img src="{G:TU}/category.png">Chủ đề</li>
+                    {topic}
+                </ul>
+                <section class="public">
+                    <p class="tit">Gợi ý liên quan<a href="javascript:;" class="fr resh"><img src="{G:TU}/resh.png" />Thay đổi hàng loạt</a></p>
+                    <ul class="overflow width2 reshcontent">
+                        {data}
+                    </ul>
+                </section>
+ 
+                <div contentEditable="{notlogins}"  name="textarea" class="textarea">
+                    {notlogin}
+                </div>
+                <!--<textarea placeholder="Vài dòng về tôi~~" name="textarea" class="textarea"></textarea>-->
+                <div class="bq rel">
+                    <div><p class="control" rel="1"><img class="b c" src="{G:TU}/b1.png" />Biểu cảm</p><a postid='{id}' class="fr fabiao" href="javascript:;" tel2='' commentid=''>Bình luận</a></div>
+                    <div class="biaoqing abs hide" >
+                        <p class="index" style="margin-bottom: 4px;"><a class="biaoqing1" href="javascript:;">Biểu cảm</a></p>
+                        <ul class="overflow biaoqing2">
+                            {biaoqing}
+                        </ul>
+                       
+                    </div>
+                </div>
+                <p class="ptit">Tất cả bình luận<span>{pinglun}</span></p>
+                <div class="pinglun">
+                    {cms}
+                </div>
+                
+            </div>
+            <div class="fr">
+                <div class="form" {reg}>
+                    <div class="w">
+                        <p class="b">Đăng ký nhanh trong vài giây</p>
+                        <input placeholder="Cài đặt tài khoản" name="tel" minlength="5" maxlength="11" />
+                        <p class="s">Có thể điền số điện thoại di động hoặc số tài khoản kỹ thuật số thuần túy</p>
+                        <input name="pass" minlength="5" maxlength="11" placeholder="Cài đặt mật khẩu" />
+                        <input name="passt" minlength="5" maxlength="11" placeholder="Xác nhận mật khẩu" />
+                        <div class="overflow"><a href="javascript:;" class="r _reg" rel="regs">Đăng ký</a><a class="l" href="{G:INDEX}/login.html">Đăng nhập</a></div>
+                    </div>
+                </div>
+                <p class="rtit">Video phổ biến<a class="more" href="{G:INDEX}/index.php?mod=rank">Thêm nữa<img style="height: 26px;" src="../image/right.png"></a></p>
+                <ul class="rpart overflow">
+                    {adv1}
+                    {data2}
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    {template:model:footer}
+    {js}
+    <script>
+        $(function(){
+            
+            $('.control').click(function(){
+                var rel = $(this).attr('rel');
+                rel = parseInt(rel);
+                if(rel==1){
+                    $('.c.b').attr('src',"{G:TU}/b2.png");
+                    $('.biaoqing').show();
+                    $(this).attr('rel',0);
+                }else{
+                    $('.c.b').attr('src',"{G:TU}/b1.png");
+                    $('.biaoqing').hide();
+                    $(this).attr('rel',1);
+                }
+            });
+            
+            $('.resh').click(function(){
+                $.ajax({url:"{G:INDEX}/webajax.php?mod=resh&type=video",success:function(data){
+                    $(".reshcontent").html(data);
+                }});
+            });
+            $('.openinstro').click(function(){
+                $('.win').show();
+            });
+            
+        });
+        
+    </script>
+    <div class='fix win hide'>
+                <div class='w rel'>
+                    <img src='{G:TU}/close.png' class='closealert abs' />
+                    <div class='padding'>
+                        <p class='t'>Giới hạn xem mỗi ngày</p>
+                        <table class="ntable">
+                            {table}
+                        </table>
+                        <a href='{G:INDEX}/index.php?mod=vip' class='d' style="margin:15px auto 0">Nâng cấp VIP</a>
+                    </div>
+                </div>
+            </div>
+            
+             <div class='fix win2 hide'>
+                <div class='w rel'>
+                    <img src='{G:TU}/close.png' class='closealert abs' />
+                    <div class='padding'>
+                        <p class='t'>Giới hạn tải xuống mỗi ngày</p>
+                        <table class="ntable">
+                            {table2}
+                        </table>
+                        <a href='{G:INDEX}/index.php?mod=vip' class='d' style="margin:15px auto 0">Nâng cấp VIP</a>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(function(){
+                    $('.two').click(function(){
+                        $('html,body').stop().animate({
+                            scrollTop: 2000
+                        },'slow');	
+                    });
+                });
+            </script>
+</body>
+
+</html>

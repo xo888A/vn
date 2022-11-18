@@ -1,0 +1,304 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Video ngắn</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <script src="<?php echo JS ?>/jquery-1.8.3.min.js"></script>
+    <script src="<?php echo JS ?>/flv.min.js"></script>
+    <script src="<?php echo JS ?>/hls.min.js"></script>
+    <script src="<?php echo JS ?>/DPlayer.min.js"></script>
+    <script src="<?php echo JS ?>/index.js"></script>
+    <style>
+    html,body{
+        background: #000;
+    }
+      .dplayer-controller{
+          display: none;
+      }
+      .fn{
+          position: absolute;width:50px;bottom:40px;right:10px;text-align: center;
+      }
+      .fn img{
+          width: 50px;
+      }
+      .fn p{
+              text-align: center;color:#fff;
+    font-size: 14px;margin-top:-5px;
+    font-weight: bold;
+      }
+      .next{
+          width:40px !important;
+      }
+      .title{
+          font-size: 13px;
+    color: #fff;
+    left: 15px;
+    bottom: 25px;
+    width: 75%;
+    line-height: 22px;
+      }
+     
+        .pinglun .m{
+            margin-bottom:10px}
+        .pinglun{
+            margin-bottom:70px}
+        .ad2{
+            margin-top:3px}
+    .pinglunwrap{
+            bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    }
+    .phonefix {
+    height: 45px;
+    z-index: 99999999;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.nd{
+    margin-bottom:20px
+}
+.biaoqing {
+    bottom: 106px;
+}
+    </style>
+</head>
+
+<body>
+    <!--<?php file::import("system-model-header"); ?>-->
+    
+    <link href="/static/iSlider/src/style/iSlider.css" rel="stylesheet">
+    <script src="/static/iSlider/src/js/iSlider.js"></script>
+    <style>
+
+        /*ul wrapper*/
+        #iSlider-wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        #iSlider-wrapper ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #iSlider-wrapper li {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+            list-style: none;
+        }
+    </style>
+    <div class="vidheight rel" id="iSlider-wrapper"></div>
+    
+    <?php file::import("system-model-footer"); ?>
+    <script>
+        $h1 = $(window).height();
+        $h2 = $('.fix.w100').height()+1;
+        $(".vidheight").height($h1-$h2);
+    </script>
+    
+    <script>
+        var list = [];
+        list.push({
+          content: '<video 	class="tvhou" width="100%" height="100%" '+
+                    		'controls="controls" autoplay="autoplay" loop="true" '+
+                		    'x-webkit-airplay="true" x5-video-player-fullscreen="true" '+
+                		    'preload="auto" playsinline="true" webkit-playsinline '+
+                		    'x5-video-player-typ="h5"> '+
+                	    '<source type="application/x-mpegURL" src="https://jgfy88.com/20221103/QM35IPfo/index.m3u8"> '+
+                	'</video>',
+        });
+        list.push({
+          content: '<video 	class="tvhou" width="100%" height="100%" '+
+                    		'autoplay="autoplay" loop="true" '+
+                		    'x-webkit-airplay="true" x5-video-player-fullscreen="true" '+
+                		    'preload="auto" playsinline="true" webkit-playsinline '+
+                		    'x5-video-player-typ="h5"> '+
+                	    '<source type="application/x-mpegURL" src="https://jgfy88.com/20221103/QM35IPfo/index.m3u8"> '+
+                	'</video>',
+        });
+        list.push({
+          content: '<video 	class="tvhou" width="100%" height="100%" '+
+                    		'autoplay="autoplay" loop="true" '+
+                		    'x-webkit-airplay="true" x5-video-player-fullscreen="true" '+
+                		    'preload="auto" playsinline="true" webkit-playsinline '+
+                		    'x5-video-player-typ="h5"> '+
+                	    '<source type="application/x-mpegURL" src="https://jgfy88.com/20221103/QM35IPfo/index.m3u8"> '+
+                	'</video>',
+        });
+        var S = new iSlider({
+            dom: document.getElementById('iSlider-wrapper'),
+            data: list,
+            isAutoplay: 0,
+            isLooping: 0,
+            isOverspread: 1,
+            animateTime: 800,
+            isVertical: true,
+        });
+    </script>
+    <!--<script>-->
+    <!--var list = [];-->
+    
+    <!--function createData() {-->
+    <!--    var id = "";-->
+    <!--    $.ajax({url:"<?php echo INDEX ?>/index.php?mod=short&rand=1",async: false,success:function(data){-->
+    <!--        console.info("data="+data)-->
+    <!--        id = data;-->
+    <!--    }});-->
+    <!--    console.info("id="+id)-->
+    <!--    return '' +-->
+    <!--    '<div class=""style="padding-top:.2em;font-size:3em;color:rgb(230, 63, 230);position:absolute;top:0;left:0;height:100%;width:100%;z-index:1">' +-->
+    <!--        '</div>' +-->
+    <!--        '<iframe style="border: transparent;position:fixed;z-index:0;width: 100%;height:100%;" src="/index.php?mod=ishort&id='+id+'"></iframe>'-->
+    <!--}-->
+    
+    <!--for (i = 0; i < 5; ++i) {-->
+    <!--    list.push({-->
+    <!--      content: createData(),-->
+    <!--    });-->
+    <!--}-->
+    // list.push(<?php echo $this->vars["content: createData()"] ?>);
+    // function addVideo(){
+    //     list.push(<?php echo $this->vars["content: createData()"] ?>);
+    //     list.push(<?php echo $this->vars["content: createData()"] ?>);
+    // }
+    // addVideo()
+    
+    
+    <!--console.info(list)-->
+    <!--console.info(list.length)-->
+    
+    
+    
+
+    <!--var S = new iSlider({-->
+    <!--    dom: document.getElementById('iSlider-wrapper'),-->
+    <!--    data: list,-->
+    <!--    isAutoplay: 0,-->
+    <!--    isLooping: 0,-->
+    <!--    isOverspread: 1,-->
+    <!--    animateTime: 800,-->
+    <!--    isVertical: true,-->
+    <!--});-->
+    
+    <!--let left_slide_count = 0, right_slide_count = 0;-->
+    <!--const COUNT_LIMIT = 2;-->
+    <!--const MOVE_RATE = 4;-->
+    <!--let startX,startY,endX,endY,distanceX,distanceY; -->
+    <!--var up_down = "down";-->
+    <!--S.on('slideChanged', function(Number){-->
+    <!--    console.info(Number)-->
+    <!--    left_slide_count = 0;-->
+    <!--    right_slide_count = 0;-->
+    <!--    sli()-->
+    <!--    iframes = document.querySelectorAll('iframe');-->
+    <!--    console.info(iframes)-->
+    <!--    if(Number == 0){-->
+    <!--        iframe = iframes[1].contentWindow.reset_dp();-->
+    <!--    }else{-->
+    <!--        if(up_down == "down"){-->
+    <!--            if(Number%3==1){-->
+    <!--                iframe = iframes[1].contentWindow.reset_dp();-->
+    <!--            }-->
+    <!--            if(Number%3==2){-->
+    <!--                iframe = iframes[2].contentWindow.reset_dp();-->
+    <!--            }-->
+    <!--            if(Number%3==0){-->
+    <!--                iframe = iframes[0].contentWindow.reset_dp();-->
+    <!--            }-->
+    <!--        }else{-->
+    <!--            if(Number%3==1){-->
+    <!--                iframe = iframes[1].contentWindow.reset_dp();-->
+    <!--            }-->
+    <!--            if(Number%3==2){-->
+    <!--                iframe = iframes[0].contentWindow.reset_dp();-->
+    <!--            }-->
+    <!--            if(Number%3==0){-->
+    <!--                iframe = iframes[2].contentWindow.reset_dp();-->
+    <!--            }-->
+    <!--        }-->
+            
+    <!--    }-->
+        
+        
+        
+        // initPlayer()
+    <!--});-->
+    
+    // function initPlayer(){
+    //     $("iframe").each(function(){
+    //         b = $(this).contents().find(".dplayer-video");
+    //         console.info(b)
+    //         b.pause()
+    //     })
+    // }
+    <!--window.onload=function(){-->
+    <!--    sli()-->
+    <!--}-->
+    <!--function sli(){-->
+    <!--    iframes = document.querySelectorAll('iframe');-->
+    <!--    console.info("length="+iframes.length);-->
+        
+    <!--    for (i = 0; i < iframes.length; ++i) {-->
+    <!--        iframe = iframes[i];-->
+            // iframe.contentWindow.reset_dp()
+    <!--        iframe.contentWindow.addEventListener('touchstart',function (e) {-->
+    <!--            startX = e.targetTouches[0].pageX;-->
+    <!--            startY = e.targetTouches[0].pageY;-->
+    <!--        });-->
+    <!--        iframe.contentWindow.addEventListener('touchmove',function (e) {-->
+    <!--            endX = e.targetTouches[0].pageX;-->
+    <!--            endY = e.targetTouches[0].pageY;-->
+    <!--            distanceX = endX - startX;-->
+    <!--            distanceY = endY - startY;-->
+    <!--            bodyHeight = $(window).height()-->
+    <!--            w = bodyHeight / MOVE_RATE-->
+                
+    <!--            if((distanceX) > (distanceY) && Math.abs(distanceY) > w){-->
+    <!--                left_slide_count ++;-->
+    <!--                if( left_slide_count < COUNT_LIMIT ){-->
+    <!--                    up_down = "down";-->
+    <!--                    S.slideNext()-->
+                        
+    <!--                    list.push({-->
+    <!--                      content: createData(),-->
+    <!--                    });-->
+    <!--                }-->
+    <!--            }else if((distanceX) < (distanceY) && Math.abs(distanceY) > w){-->
+    <!--                right_slide_count ++;-->
+    <!--                if( right_slide_count < COUNT_LIMIT ){-->
+    <!--                    up_down = "up";-->
+    <!--                    S.slidePrev()-->
+                        
+    <!--                }-->
+    <!--            }else{-->
+    <!--                console.log('点击未滑动');-->
+    <!--            }-->
+    <!--        });-->
+    <!--    }-->
+    <!--}-->
+    
+    
+    
+
+    <!--</script>-->
+    
+</body>
+
+</html>

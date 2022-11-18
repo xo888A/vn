@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>{name}</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <script type="text/javascript" src="../script/jquery.js"></script>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="{G:JS}/index.js"></script>
+    <style>
+        .fabiao2 {
+            right: 5px;
+            top: 5px;
+            position: absolute;
+            background: #FF7AA5;
+            color: #fff;
+            height: 35px;
+            border-radius: 4px;
+            line-height: 35px;
+            font-size: 13px;
+            padding: 0 2%;
+        }
+        .content img{
+            max-width: 100%;
+            margin:5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    {template:model:top}
+    <div class="wrap mt70">
+        <h3 class='w100 fl center h3' style="margin-bottom:20px">{name}</h3>
+        <div class="content fl">{content}</div>
+        <div class="clear"></div>
+        <div class="pl" style="margin-top:20px">
+            
+                <p class="ptit">Toàn bộ bình luận<span>{pinglun}</span></p>
+                <div class="pinglun">
+                    {cms}
+                </div>
+        </div>
+         <footer class="fix w100  phonefix" >
+        <div contentEditable="{notlogins}"  name="textarea" class="textarea">
+            {notlogin}
+        </div>
+        <div class="bq ">
+                <div><p class="control" rel="1"><img class="b c" src="{G:TU}/b1.png" /></p><a postid='{id}' class="fr fabiao2" href="javascript:;" tel2='' commentid=''>Bình luận</a></div>
+            </div>
+    </footer>
+    <div class="biaoqing hide">
+        <p class="biaoqingindex" style="margin-bottom: 4px;"><a class="biaoqing1" href="javascript:;">Biểu cảm</a></p>
+        <ul class="overflow biaoqing2">
+            {biaoqing}
+        </ul>
+      
+    </div>
+    </div>
+  
+    <script>
+        $(function(){
+            
+            $('.control').click(function(){
+                var rel = $(this).attr('rel');
+                rel = parseInt(rel);
+                if(rel==1){
+                    $('.c.b').attr('src',"{G:TU}/b2.png");
+                    $('.biaoqing').show();
+                    $(this).attr('rel',0);
+                }else{
+                    $('.c.b').attr('src',"{G:TU}/b1.png");
+                    $('.biaoqing').hide();
+                    $(this).attr('rel',1);
+                }
+            });
+            
+            
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Ví của tôi</title>
+    <link rel="stylesheet" href="<?php echo CSS ?>/style.css" />
+    <script src="<?php echo JS ?>/jquery-1.8.3.min.js"></script>
+    <script src="<?php echo JS ?>/index.js"></script>
+</head>
+
+<body>
+    <?php file::import("system-model-header"); ?>
+    <div class="wrap2 overflow">
+        <div class="fl w100">
+            <div class="fl fls">
+                <p class="u"><img src="<?php echo $this->vars["avatar"] ?>" /></p>
+                <p class="qiandao">Điểm danh nhận thưởng</p>
+                <ul class="fun">
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=user"><img src="<?php echo TU ?>/u1.png" />Trung tâm hội viên</a></li>
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=edit"><img src="<?php echo TU ?>/u7.png" />Quản lý tác phẩm</a></li>
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=set"><img src="<?php echo TU ?>/u2.png" />Cài đặt tài khoản</a></li>
+                    <li class="selected"><a href="<?php echo INDEX ?>/index.php?mod=wallet"><img src="<?php echo TU ?>/u3_.png" />Ví của tôi</a></li>
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=vip"><img src="<?php echo TU ?>/u4.png" />Nạp tiền thành viên</a></li>
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=money"><img src="<?php echo TU ?>/u5.png" />Nạp tiền</a></li>
+                    <!--<li><a href="<?php echo INDEX ?>/index.php?mod=card"><img src="<?php echo TU ?>/u6.png" />Đổi mật khẩu thẻ</a></li>-->
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=concern"><img src="<?php echo TU ?>/u7.png" />Theo dõi của tôi</a></li>
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=albuy"><img src="<?php echo TU ?>/u8.png" />Video đã mua</a></li>
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=customer"><img src="<?php echo TU ?>/u9.png" />Trung tâm dịch vụ khách hàng</a></li>
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=message"><img src="<?php echo TU ?>/u10.png" />Trung tâm thông tin</a></li>
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=shares"><img src="<?php echo TU ?>/u11.png" />Kiếm tiền quảng cáo</a></li>
+                    <li class="logout"><a href="<?php echo INDEX ?>/index.php?mod=logout "><img src="<?php echo TU ?>/u12.png" />Đăng xuất tài khoản</a></li>
+                </ul>
+            </div>
+            <div class="fl flr">
+                <div class="top rel newtop2">
+                    <div>
+                        <ul class="overflow ">
+                            <li>
+                                <img src="<?php echo TU ?>/top1.png" />
+                                <p class="p1">VNĐ</p>
+                                <p class="p2">Số dư</p>
+                            </li>
+                            <li>
+                                <img src="<?php echo TU ?>/top2.png" />
+                                <p class="p1">Tiền của tôi</p>
+                                <p class="p2">Số dư</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <img class="abs" src="<?php echo TU ?>/moneybg.png" />
+                </div>
+                <script>
+                    $(function(){
+                        $('.pubtit p').click(function(){
+                            var rel = $(this).attr("rel");
+                            $('.pubtit p').attr('class','');
+                            $(this).attr('class','selected');
+                            if(rel=="u1"){
+                                $('.part1').show();
+                                $('.part2').hide();
+                            }else{
+                                $('.part2').show();
+                                $('.part1').hide();
+                            }
+                        });
+                        $('.tx li').click(function(){
+                            $('.tx li').attr('class','');
+                            $('.public').attr('style','display:none');
+                            var rel = $(this).attr('rel');
+                            rel = "."+rel;
+                            $(this).attr('class','selected');
+                            $(rel).attr('style','display:block');
+                            if(rel=='.npart1'){
+                                $("input[name=wtype]").val("bank")
+                            }else if(rel=='.npart2'){
+                                $("input[name=wtype]").val("alipay")
+                            }else if(rel=='.npart3'){
+                                $("input[name=wtype]").val("number")
+                            }
+                        });
+                    });
+                </script>
+                <div class="pubtit">
+                    <p class="selected" rel="u1"><span></span>Đăng ký rút tiền</p>
+                    <p rel="u2"><span></span>Lịch sử rút tiền</p>
+                </div>
+                <div class="part3 part overflow  part1">
+                    <p class="notice" style="font-size:20px">Vui lòng nhập số tiền rút</p>
+                    <p class="button button2 s"><input name="wallet" placeholder="Nhập số dư" /></p>
+                    <p class="notice notice2">Số dư hiện tại: <span class="nowmoney"><?php echo $this->vars["money"] ?></span>đồng<span class="fr alltixian">Rút toàn bộ</span></p>
+                    <ul class="overflow tx">
+                        <li class="selected" rel="npart1"><p class="abs"><img class="r" src="<?php echo TU ?>/select.png"/></p><div><img class="z" src="<?php echo TU ?>/tx1.png"/><span>Thẻ ngân hàng</span></div></li>
+                        <li rel="npart2"><p class="abs"><img class="r" src="<?php echo TU ?>/select.png"/></p><div><img class="z" src="<?php echo TU ?>/tx2.png"/><span>Ví điện tử</span></div></li>
+                        <li rel="npart3"><p class="abs"><img class="r" src="<?php echo TU ?>/select.png"/></p><div><img class="z" src="<?php echo TU ?>/tx3.png"/><span>USDT</span></div></li>
+                    </ul>
+                    <input type="hidden" name="wtype" value="bank" />
+                    <div class="public npart1">
+                        <p class="button button2 s"><input name="bankcard" placeholder="Số thẻ ngân hàng" /></p>
+                        <p class="button button2 s"><input name="bankcardname" placeholder="Tên chủ tài khoản" /></p>
+                        <p class="button button2 s"><input name="bankcardtype" placeholder="Tên ngân hàng chủ tài khoản" /></p>
+                    </div>
+                    <div class="public npart2 hide">
+                        <p class="button button2 s"><input name="alipay" placeholder="Tên thật" /></p>
+                        <p class="button button2 s"><input name="alipayname" placeholder="Số ví điện tử" /></p>
+                    </div>
+                    <div class="public npart3 hide">
+                        <p class="button button2 s"><input name="numberaddress" placeholder="Đơn vị tiền tệ(chỉ áp dụng USDT-TRC20)" /></p>
+                    </div>
+                    <p class="button button2 s"><input name="pass" placeholder="Mật khẩu rút tiền" /></p>
+                    <p class="notice notice2">Tiền rút sẽ vào tài khoản trong vòng 24 giờ, nếu không nhận được, vui lòng liên hệ với bộ phận chăm sóc khách hàng</p>
+                    <p class="pubbtn wallettixian">Lập tức rút tiền</p>
+                </div>
+                <div class="part2 hide">
+                    <ul><?php echo $this->vars["w"] ?></ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <?php file::import("system-model-footer"); ?>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Bài đăng cộng đồng</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <script type="text/javascript" src="../script/jquery.js"></script>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <style>
+        .message {
+            border-bottom:0;
+            margin-bottom: 5px;
+        }
+        a{
+            cursor: pointer;
+            display: block;
+        }
+        .overhid img{
+            height:25px !important;
+            width: auto !important;
+            margin-right:0 !important;
+        }
+        .pinglunss img.abs{
+            border-radius: 0;
+        }
+        .pinglunss .avatar {
+    width: 48px;
+    height: 48px;
+    margin: 1px;}
+    </style>
+</head>
+
+<body>
+    {template:model:top}
+    <div class="wrap  mt70">
+        <ul class="overflow message width1">
+            <li>
+                <a href="{G:INDEX}/index.php?mod=message&type=平台通知">
+                <img src="{G:INDEX}/static/img/web/msg1.png">
+                <p>Thông báo của App</p>
+                </a>
+            </li>
+            <li>
+                <a href="{G:INDEX}/index.php?mod=message&type=官方消息">
+                <img src="{G:INDEX}/static/img/web/msg2.png">
+                <p>Thông tin chính thức</p>
+                </a>
+            </li>
+            <li>
+                <a href="{G:INDEX}/index.php?mod=msga">
+                <img src="{G:INDEX}/static/img/web/msg3.png">
+                <p>Tin nhắn của tôi</p>
+                </a>
+            </li>
+            <li>
+                <a href="{G:INDEX}/index.php?mod=activity">
+                <img src="{G:INDEX}/static/img/web/msg4.png">
+                <p>Hoạt động chính thức</p>
+                </a>
+            </li>
+            <li>
+                <a href="{G:INDEX}/index.php?mod=app">
+                <img src="{G:INDEX}/static/img/web/msg5.png">
+                <p>Đề xuất của APP</p>
+                </a>
+            </li>
+        </ul>
+        <div class="togglemsg w100 overflow">
+                    <p><span class="a"></span><a href="{G:INDEX}/index.php?mod=msga">Tin nhắn của tôi<span class="b11 b"></span></a></p>
+                    <p class="selected"><span  class="a"></span><a href="{G:INDEX}/index.php?mod=msgb">Bài đăng cộng đồng<span class="b22 b"></span></a></p></div>
+        <ul class="overflow  pinglunss">
+            {data}
+        </ul>
+        {page}
+    </div>
+</body>
+
+</html>

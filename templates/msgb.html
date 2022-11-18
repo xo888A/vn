@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Bài đăng cộng đồng</title>
+    <link rel="stylesheet" href="{G:CSS}/style.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/index.js"></script>
+    <style>
+        .message {
+            border-bottom:0;
+            margin-bottom: 5px;
+        }
+        .overhid img{
+            height:25px !important;
+            width: auto !important;
+            margin-right:0 !important;
+        }
+        .wrap2 .fl .pingluns img.abs{
+            border-radius: 0 !important;
+        }
+        .wrap2 .fl .pingluns .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin: 1px;
+        }
+        .usermsg{
+            margin-left:5px;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    {template:model:header}
+    <div class="wrap2 overflow">
+        <div class="fl w100">
+            <div class="fl fls">
+                <p class="u"><img src="{avatar}" /></p>
+                <p class="qiandao">Điểm danh nhận thưởng</p>
+                <ul class="fun">
+                    <li><a href="{G:INDEX}/index.php?mod=user"><img src="{G:TU}/u1.png" />Trung tâm hội viên</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=set"><img src="{G:TU}/u2.png" />Cài đặt tài khoản</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=wallet"><img src="{G:TU}/u3.png" />Ví của tôi</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=vip"><img src="{G:TU}/u4.png" />Nạp tiền hội viên</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=money"><img src="{G:TU}/u5.png" />Nạp tiền</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=card"><img src="{G:TU}/u6.png" />Đổi mật khẩu thẻ</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=concern"><img src="{G:TU}/u7.png" />Theo dõi của tôi</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=albuy"><img src="{G:TU}/u8.png" />Video đã mua</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=customer"><img src="{G:TU}/u9.png" />Trung tâm chăm sóc khách hàng</a></li>
+                    <li  class="selected"><a href="{G:INDEX}/index.php?mod=message"><img src="{G:TU}/u10_.png" />Trung tâm thông tin</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=shares"><img src="{G:TU}/u11.png" />Quảng cáo kiếm tiền</a></li>
+                    <li class="logout"><a href="{G:INDEX}/index.php?mod=logout "><img src="{G:TU}/u12.png" />Đăng xuất tài khoản</a></li>
+                </ul>
+            </div>
+            <style>
+                $(function(){
+                    $('.fun ul li:nth-child(10)').addClass('rel');
+                    $('.fun ul li:nth-child(10)').append("<p>5</p>");
+                });
+            </style>
+            <div class="fl flr">
+                <ul class="overflow message width1">
+                    <li>
+                        <a href="{G:INDEX}/index.php?mod=message&type=Thông báo nền tảng">
+                        <img src="{G:TU}/msg1.png" />
+                        <p>Thông báo nền tảng</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{G:INDEX}/index.php?mod=message&type=Thông tin chính thức">
+                        <img src="{G:TU}/msg2.png" />
+                        <p>Thông tin chính thức</p>
+                        </a>
+                    </li>
+                    <li class="rel">
+                        
+                        <a href="{G:INDEX}/index.php?mod=msga">
+                        <img src="{G:TU}/msg3.png" />
+                        <p>Thông tin của tôi</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{G:INDEX}/index.php?mod=activity">
+                        <img src="{G:TU}/msg4.png" />
+                        <p>Hoạt động chính thức</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{G:INDEX}/index.php?mod=app">
+                        <img src="{G:TU}/msg5.png" />
+                        <p>APP gợi ý</p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="togglemsg w100 overflow">
+                    <p><span class="a"></span><a href="{G:INDEX}/index.php?mod=msga">Thông tin của tôi<span class="b11 b"></span></a></p>
+                    <p class="selected"><span  class="a"></span><a href="{G:INDEX}/index.php?mod=msgb">Bài đăng cộng đồng<span class="b22 b"></span></a></p></div>
+                <ul class="overflow  pingluns">
+                    {data}
+                </ul>
+                {page}
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    {template:model:footer}
+</body>
+
+</html>

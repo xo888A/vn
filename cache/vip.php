@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Nạp tiền hội viên</title>
+    <link rel="stylesheet" href="<?php echo CSS ?>/style.css" />
+    <script src="<?php echo JS ?>/jquery-1.8.3.min.js"></script>
+    <script src="<?php echo JS ?>/index.js"></script>
+    <style>
+        .wrap2 .fl ul li{
+            width: 100%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <?php file::import("system-model-header"); ?>
+    <div class="wrap2 overflow">
+        <div class="fl w100">
+            <div class="fl fls">
+                <p class="u"><img src="<?php echo $this->vars["avatar"] ?>" /></p>
+                <p class="qiandao">Điểm danh nhận thưởng</p>
+                <ul class="fun">
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=user"><img src="<?php echo TU ?>/u1.png" />Trung tâm hội viên</a></li>
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=edit"><img src="<?php echo TU ?>/u7.png" />Quản lý tác phẩm</a></li>
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=set"><img src="<?php echo TU ?>/u2.png" />Cài đặt tài khoản</a></li>
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=wallet"><img src="<?php echo TU ?>/u3.png" />Ví của tôi</a></li>
+                    <li  class="selected"><a href="<?php echo INDEX ?>/index.php?mod=vip"><img src="<?php echo TU ?>/u4_.png" />Nạp tiền hội viên</a></li>
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=money"><img src="<?php echo TU ?>/u5.png" />Nạp tiền</a></li>
+                    <!--<li><a href="<?php echo INDEX ?>/index.php?mod=card"><img src="<?php echo TU ?>/u6.png" />Đổi mật khẩu thẻ</a></li>-->
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=concern"><img src="<?php echo TU ?>/u7.png" />Theo dõi của tôi</a></li>
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=albuy"><img src="<?php echo TU ?>/u8.png" />Video đã mua</a></li>
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=customer"><img src="<?php echo TU ?>/u9.png" />Trung tâm dịch vụ khách hàng</a></li>
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=message"><img src="<?php echo TU ?>/u10.png" />Trung tâm thông tin</a></li>
+                    <li><a href="<?php echo INDEX ?>/index.php?mod=shares"><img src="<?php echo TU ?>/u11.png" />Kiếm tiền quảng cáo</a></li>
+                    <li class="logout"><a href="<?php echo INDEX ?>/index.php?mod=logout "><img src="<?php echo TU ?>/u12.png" />Đăng xuất tài khoản</a></li>
+                </ul>
+            </div>
+            <script>
+                    $(function(){
+                        $('.onclick p').click(function(){
+                            $('.onclick p').attr('class','');
+                            var rel = $(this).attr("rel");
+                            $(this).attr('class','selected');
+                            if(rel=="1"){
+                                $('.npart1').show();
+                                $('.npart2').hide();
+                                $('.npart3').hide();
+                            }else if(rel=='2'){
+                                $('.npart1').hide();
+                                $('.npart2').show();
+                                $('.npart3').hide();
+                            }else if(rel=='3'){
+                                $('.npart1').hide();
+                                $('.npart2').hide();
+                                $('.npart3').show();
+                            }
+                        });
+                        $('.tx li').click(function(){
+                            $('.tx li').attr('class','');
+                            $(this).attr('class','selected');
+                        });
+                    });
+                </script>
+            <div class="fl flr">
+               <div class="top rel ntop">
+                    <img class="abs" src="<?php echo TU ?>/vipbg.png">
+                    <p class="l1 abs"><img src="<?php echo $this->vars["avatar"] ?>" /></p>
+                    <div class="l2 abs">
+                        <p class="tel"><?php echo $this->vars["tel"] ?><?php echo $this->vars["level"] ?></p>
+                        <p class="endtime"><?php echo $this->vars["viptime"] ?></p>
+                    </div>
+                    <div class="l3 abs onclick">
+                        <p class="selected" rel="1">Tự nâng cấp VIP</p>
+                        <!--<p rel="2">Đổi mật khẩu thẻ VIP</p>-->
+                        <p rel="2">Vấn đề thường gặp</p>
+                    </div>
+               </div> 
+               <!--part1-->
+               <div class="npart1 ">
+                   <p class="btit">Vui lòng chọn gói VIP<span class="fr"><a style="color:#FF7AA5" href="<?php echo INDEX ?>/index.php?mod=customer">Cần hỗ trợ từ nhân viên chăm sóc khách hàng</a></span></p>
+                   <ul class="width3 overflow vippay">
+                       <?php echo $this->vars["vip"] ?>
+                   </ul>
+                   <div class="not">
+                       <div class="w">
+                           <p><span>Phải đọc khi mua:</span><?php echo $this->vars["miaoshu1"] ?></p>
+                       </div>
+                   </div>
+                    <p class="morder">Số tiền đặt hàng:<span class="s1">¥<strong>0</strong>đồng</span><span class="s2">Đã lựa chọn: <strong>Chưa có lựa chọn</strong></span><a href="javascript:;" class="gopay fr" id="">Xác nhận bước tiếp theo</a></p>
+                   <!--<img src="<?php echo TU ?>/btitpc.jpg" style="margin-top: 30px;" />-->
+                   <!--<ul class="func overflow width2 w100">-->
+                   <!--    <li>-->
+                   <!--        <div>-->
+                   <!--            <img src="<?php echo TU ?>/f1.png" />-->
+                   <!--            <p>Phát trực tuyến không giới hạn các video phúc lợi trên toàn mạng</p>-->
+                   <!--        </div>-->
+                   <!--    </li>-->
+                   <!--    <li>-->
+                   <!--        <div>-->
+                   <!--            <img src="<?php echo TU ?>/f2.png" />-->
+                   <!--            <p>Duyệt ảnh điện tử không giới hạn trên toàn bộ mạng</p>-->
+                   <!--        </div>-->
+                   <!--    </li>-->
+                   <!--    <li>-->
+                   <!--        <div>-->
+                   <!--            <img src="<?php echo TU ?>/f3.png" />-->
+                   <!--            <p>Hơn 300 bộ tác phẩm gốc được cập nhật mỗi tháng</p>-->
+                   <!--        </div>-->
+                   <!--    </li><li>-->
+                   <!--        <div>-->
+                   <!--            <img src="<?php echo TU ?>/f4.png" />-->
+                   <!--            <p>Trang web cho PC, điện thoại,App 3 trạm dùng chung</p>-->
+                   <!--        </div>-->
+                   <!--    </li>-->
+                   <!--    <li>-->
+                   <!--        <div>-->
+                   <!--            <img src="<?php echo TU ?>/f5.png" />-->
+                   <!--            <p>Chất lượng video 1080PHD siêu rõ nét, không mất chất lượng Blu-ray</p>-->
+                   <!--        </div>-->
+                   <!--    </li><li>-->
+                   <!--        <div>-->
+                   <!--            <img src="<?php echo TU ?>/f6.png" />-->
+                   <!--            <p>Tải xuống trực tuyến video / bộ hình ảnh không mất dữ liệu gốc</p>-->
+                   <!--        </div>-->
+                   <!--    </li><li>-->
+                   <!--        <div>-->
+                   <!--            <img src="<?php echo TU ?>/f7.png" />-->
+                   <!--            <p>Đã đăng ký lên đến 100 mô hình gốc để cập nhật liên tục</p>-->
+                   <!--        </div>-->
+                   <!--    </li><li>-->
+                   <!--        <div>-->
+                   <!--            <img src="<?php echo TU ?>/f8.png" />-->
+                   <!--            <p>Tận hưởng một tên miền VIP độc quyền và không bao giờ bị lạc</p>-->
+                   <!--        </div>-->
+                   <!--    </li><li>-->
+                   <!--        <div>-->
+                   <!--            <img src="<?php echo TU ?>/f9.png" />-->
+                   <!--            <p>Lịch sử mua hàng hóa đơn bảo mật không có từ ngữ khiêu dâm</p>-->
+                   <!--        </div>-->
+                   <!--    </li><li>-->
+                   <!--        <div>-->
+                   <!--            <img src="<?php echo TU ?>/f10.png" />-->
+                   <!--            <p>Dịch vụ khách hàng VIP trực tuyến độc quyền hỏi đáp 24 giờ</p>-->
+                   <!--        </div>-->
+                   <!--    </li>-->
+                   <!--</ul>-->
+               </div>
+               <!--part2-->
+               <!--<div class="part4 npart2 part overflow iuy hide">-->
+               <!--     <p class="notice" style="font-size:24px;margin-top:20px">Đổi VIP bằng mã PIN</p>-->
+               <!--     <p class="button button2 s"><input class='covertcard' placeholder="Vui lòng đăng nhập mật khẩu thẻ" style="width: 49.8%;" /></p>-->
+               <!--     <p class="pubbtn covertcardbtn" style="margin:20px 0 10px">Xác nhận trao đổi</p>-->
+               <!--     <p class="notice a">1. Mỗi thẻ chỉ được sử dụng một lần</p>-->
+               <!--     <p class="notice a">2. Sao chép và dán mã thẻ bạn đã mua vào ô nhập ở trên để đổi</p>-->
+               <!--     <p class="notice a">3. Vui lòng liên hệ với bộ phận chăm sóc khách hàng khi cần trợ giúp</p>-->
+               <!-- </div>-->
+                <!--part3-->
+               <div class="npart2 overflow addpt3 hide">
+                    <p class="notice y" style="font-size:24px;margin-top:20px">Vấn đề thường gặp/Hỗ trợ hỏi đáp </p>
+                    <ul class="overflow answer">
+                        <?php echo $this->vars["answer"] ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+     
+    <?php file::import("system-model-footer"); ?>
+    <script>
+        $(function(){
+            $('.vippay li').click(function(){
+                var s1 = $(this).find('.s1').text();
+                var id = $(this).find("input[name=id]").val();
+                $('.vippay li img.vipselect').remove();
+                var ele = $(this).find('.vipselect').attr('class');
+                if(ele==undefined || !ele){
+                    $(this).append("<img class='abs vipselect' src='./static/img/web/<?php echo $this->vars["vipis"] ?>'>");
+                }
+                var yhq = parseInt($(this).find('.yhq').text());
+                if(yhq){
+                    s1 = parseInt(s1)-yhq;
+                }
+                $('.morder span.s1 strong').text(s1);
+                $('.morder span.s2 strong').text($(this).find('.y1').text());
+                $('.gopay').attr('id',id)
+            });
+            $('.gopay').click(function(){
+                var id = $(this).attr('id');
+                ajax('gopay',"id="+id+"&type=vip");
+            });
+        });
+    </script>
+</body>
+
+</html>

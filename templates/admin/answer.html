@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>{G:TITLE}</title>
+    <link rel="stylesheet" href="{G:CSS}/backstage.css" />
+    <link rel="stylesheet" href="{G:CSS}/font-awesome.min.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/backstage.js"></script>
+    <script>
+        $(function(){
+            $("select[name=wtype]").find("option[value='{wtype}']").attr("selected",true);
+        });
+    </script>
+    <style>
+        .category_input{
+            width:100%
+        }
+    </style>
+</head>
+<body>
+    {template:model:admin:header}
+    {template:model:admin:aside}
+    <div class="wrap">
+        <div class="w100">
+            {template:model:admin:tag}
+            <div class="content">
+        		<div class="frame">
+                    <p class="title">Thêm câu hỏi</p>
+                    <div class="frmtable_content">
+                		<table class="w100 addtopic">
+                			<tbody><tr>
+                				<td>Thêm tiêu đề</td>
+                				<td><input name="title" placeholder="" value="{title}"></td>
+                			</tr>
+                			<tr>
+                				<td>Nội dung câu hỏi</td>
+                				<td><input name="content" placeholder="" value="{content}"></td>
+                			</tr>
+                			<tr>
+                				<td>Loại câu hỏi</td>
+                				<td class="search">
+                				    <select name="wtype">
+                                        <option value="VIP模块">Module VIP</option>
+                                        <option value="金币模块">Tiền vàng</option>
+                                        <option value="客服问答模块">Hỏi đáp dịch vụ khách hàng</option>
+                                        <input type="hidden" name="id" value="{id}" />
+                                    </select>
+                                </td>
+                			</tr>
+                			<tr>
+                				<td></td>
+                				<td>{btn}</td>
+                			</tr>
+                		</tbody></table>
+                	</div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</body>
+</html>

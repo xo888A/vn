@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Chăm sóc khách hàng</title>
+    <link rel="stylesheet" href="{G:CSS}/style.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/index.js"></script>
+</head>
+
+<body>
+    {template:model:header}
+    <div class="wrap2 overflow">
+        <div class="fl w100">
+            <div class="fl fls">
+                <p class="u"><img src="{avatar}" /></p>
+                <p class="qiandao">Điểm danh nhận xu vàng</p>
+                <ul class="fun">
+                    <li><a href="{G:INDEX}/index.php?mod=user"><img src="{G:TU}/u1.png" />Trung tâm hội viên</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=edit"><img src="{G:TU}/u7.png" />Quản lý tác phẩm</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=set"><img src="{G:TU}/u2.png" />Cài đặt tài khoản</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=wallet"><img src="{G:TU}/u3.png" />Ví tiền của tôi</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=vip"><img src="{G:TU}/u4.png" />Hội viên nạp tiền</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=money"><img src="{G:TU}/u5.png" />Nạp xu vàng</a></li>
+                    <!--<li><a href="{G:INDEX}/index.php?mod=card"><img src="{G:TU}/u6.png" />Đổi mã thẻ</a></li>-->
+                    <li><a href="{G:INDEX}/index.php?mod=concern"><img src="{G:TU}/u7.png" />Theo dõi của tôi</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=albuy"><img src="{G:TU}/u8.png" />Video đã mua</a></li>
+                    <li  class="selected"><a href="{G:INDEX}/index.php?mod=customer"><img src="{G:TU}/u9_.png" />Trung tâm Chăm sóc khách hàng</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=message"><img src="{G:TU}/u10.png" />Trung tâm thông báo</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=shares"><img src="{G:TU}/u11.png" />Quảng cáo kiếm tiền</a></li>
+                    <li class="logout"><a href="{G:INDEX}/index.php?mod=logout "><img src="{G:TU}/u12.png" />Đăng xuất tài khoản</a></li>
+                </ul>
+            </div>
+           
+            <div class="fl flr">
+                <div class="customer rel">
+                    <img class="customer" src="{G:TU}/customer.png" />
+                    <div>
+                        <p class="p1">Trung tâm Chăm sóc khách hàng</p>
+                        <p class="p2">Chào bạn! Có phải bạn đang gặp phải vấn đề? Nếu thật sự gặp phải vấn đề trong quá trình sử dụng dịch vụ, vui lòng liên hệ với dịch vụ Chăm sóc khách hàng chuyên nghiệp của chúng tôi, đội ngũ dịch vụ Chăm sóc khách hàng được đào tạo bài bản và huấn luyện kĩ lưỡng sẽ cung cấp đầy đủ thông tin hướng dẫn cho đến khi vấn đề của bạn được giải quyết thành công!</p>
+                        <p class="cutbtn"><a href="{kefu1}" target="_blank">Chăm sóc khách hàng trực tuyến</a></p>
+                    </div>
+                </div>
+                <p class="w100 center anw2">Câu hỏi thường gặp (phương án giải quyết đề xuất tự động))</p>
+                <ul class="answerlist overflow">
+                    {data}
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    {template:model:footer}
+</body>
+
+</html>

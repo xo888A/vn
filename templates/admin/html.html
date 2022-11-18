@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>{G:TITLE}</title>
+    <link rel="stylesheet" href="{G:CSS}/backstage.css" />
+    <link rel="stylesheet" href="{G:CSS}/font-awesome.min.css" />
+    <link rel="stylesheet" href="{G:CSS}/time.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/backstage.js"></script>
+    <link rel="stylesheet" href="{G:PLUGINS}/themes/default/default.css" />
+	<link rel="stylesheet" href="{G:PLUGINS}/plugins/code/prettify.css" />
+	<script charset="utf-8" src="{G:PLUGINS}/kindeditor.js"></script>
+	<script charset="utf-8" src="{G:PLUGINS}/lang/zh-CN.js"></script>
+	<script charset="utf-8" src="{G:PLUGINS}/plugins/code/prettify.js"></script>
+	<script>
+		KindEditor.ready(function(K) {
+			var editor1 = K.create('textarea', {
+				cssPath : '{G:PLUGINS}/plugins/code/prettify.css',
+				uploadJson : '{G:PLUGINS}/php/upload_json.php',
+				fileManagerJson : '{G:PLUGINS}/php/file_manager_json.php',
+				allowFileManager : true,
+				afterCreate : function() {
+				    this.sync();
+				},
+				afterBlur:function(){
+				    this.sync();
+				}
+			});
+			prettyPrint();
+		});
+	</script>
+    <style>
+        .search input{
+            width: 70%;
+        }
+        .ke-container{
+            width: 75% !important;
+        }
+    </style>
+</head>
+<body>
+    {template:model:admin:header}
+    {template:model:admin:aside}
+    <div class="wrap">
+        <div class="w100">
+            {template:model:admin:tag}
+            <div class="content">
+                <div class="frame">
+                	<div class="frmtable_content">
+                		<table class="w100">
+                			<tr>
+                				<td>Tiêu đề</td>
+                				<td><p><input name="name" value="{name}" placeholder="" /></p></td>
+                			</tr>
+                			<tr>
+                				<td>Nội dung</td>
+                				<td><textarea name="content">{content}</textarea></td>
+                			</tr>
+                			<input type="hidden" name="id" value="{CW('get/id')}" />
+                			<tr>
+                				<td></td>
+                				<td>{button}</td>
+                			</tr>
+                		</table>
+                	</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>

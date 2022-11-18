@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>{G:TITLE}</title>
+    <link rel="stylesheet" href="{G:CSS}/backstage.css" />
+    <link rel="stylesheet" href="{G:CSS}/font-awesome.min.css" 
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/backstage.js"></script>
+</head>
+<body>
+    {template:model:admin:header}
+    {template:model:admin:aside}
+    <div class="wrap">
+        <div class="w100">
+            {template:model:admin:tag}
+            <div class="content">
+        		<div class="frame">
+                    <p class="title">Cài đặt thông báo</p>
+                    <div class="notice">
+		                <div class="note-info">
+		                    <p class="p1 btn3">Nhắc nhở</p>
+		                    <p class="pub">Nhiều từ khóa được phân tách bằng tiếng Anh (,), cài đặt ít nhất 4 từ khóa và tối đa 8 từ khóa</p>
+		               </div>
+		            </div>
+                    <div class="frmtable_content">
+                		<table class="w100">
+                			<tbody>
+                			<tr>
+                				<td>Từ khóa tìm kiếm hot</td>
+                				<td><input name="hotsearch" value="{hotsearch}" placeholder="Cài đặt 4 từ khóa, nhiều nhất 8 từ khóa"></td>
+                			</tr>    
+
+                			<tr>
+                				<td></td>
+                				<td><a href="javascript:;" class="btn submit" rel="updathotsearch"><i class="fa fa-edit"></i>Cập nhật</a></td>
+                			</tr>
+                		</tbody></table>
+                	</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Chủ đề lưu trữ</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <script type="text/javascript" src="../script/jquery.js"></script>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="{G:JS}/index.js"></script>
+    <style>
+        .typelist{
+            margin-top: 70px;
+        }
+        .typelist li{
+            float: left;
+            width:100%;
+            margin-bottom: 20px;
+        }
+        .typelist li img{
+            height:180px;
+            width:100%;
+            border-radius: 4px 4px 0 0;
+        }
+        .typelist li:nth-child(3n){
+            margin-right:0;
+        }
+        .typelist li p{
+            padding: 10px;
+            background: #F9F9F9;
+            border-radius:0 0 4px 4px;
+            font-size: 15px;
+        }
+        .topul{
+            margin-left: 20%;
+        }
+        .topul li{
+            width: auto  !important;
+            margin-right: 3% !important;
+            position: relative;
+        }
+         .topul li a{
+            font-weight: normal !important;   
+         }
+        .topul li.selected a{
+            font-weight: bold !important;
+        }
+        .topul li.selected p{
+            font-weight: bold;
+            position: absolute;
+            background: #FF7AA5;
+            height: 5px;
+            width: 50%;
+            border-radius: 10px;
+            top: 42px;
+            left: 24.5%;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="public ls">
+        <img class="abs left back" src="../image/left_.png">
+        <ul class="topul overflow">
+            <li class=""><p class="abs"></p><a href="{G:INDEX}/index.php?mod=selectuser">Hot blogger</a></li>
+            <li class="selected"><p class="abs"></p><a href="{G:INDEX}/index.php?mod=typelist">Chủ đề lưu trữ</a></li>
+            <li class=""><p class="abs"></p><a href="{G:INDEX}/index.php?mod=playlist">Chọn cách chơi</a></li>
+        </ul>
+        <p class="center"></p>
+</header>
+    <!--<div class="flex ">-->
+    <!--    <ul class="publictag">-->
+    <!--       <li class=""><p class="abs"></p><a href="{G:INDEX}/index.php?mod=selectuser">精选萌主</a></li>-->
+    <!--        <li class="selected"><p class="abs"></p><a href="{G:INDEX}/index.php?mod=typelist">专题归档</a></li>-->
+    <!--        <li class=""><p class="abs"></p><a href="{G:INDEX}/index.php?mod=playlist">选择玩法</a></li>-->
+    <!--        </ul>-->
+    <!--</div>-->
+        <ul class="overflow typelist wrap">
+            {data}
+        </ul>
+
+    {template:model:footer}
+
+</body>
+
+</html>

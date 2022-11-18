@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Trả lời</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <script type="text/javascript" src="../script/jquery.js"></script>
+    <script type="text/javascript" src="{G:JS}/index.js"></script>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <style>
+        .message {
+            
+            margin-bottom: 5px;
+        }
+
+        .textarea{
+            height: 130px;
+            overflow-y: auto;
+            font-size: 14px !important;
+            width: 94%;
+            padding: 3%;
+            margin: 0 0 10px;
+        }
+        .smile{
+            height:25px;
+        }
+        .hf{
+            background: #FF7AA5;
+            color: #fff !important;
+            font-size: 14px;
+            width: 80px !important;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 4px;
+        }
+        .biaoqing{
+            position: absolute;
+            bottom: initial;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            top: 15px;
+        }
+        .biaoqing .index a {
+            color: #000;
+            background: #F1F1F1;
+            margin-right: 5px;
+            padding: 5px 4px;
+            border-radius: 4px;
+            font-size: 15px;
+            display: inline-block;
+            text-align: center;
+            margin-bottom: -5px;
+        }
+        .index {
+            height: auto;
+        }
+        .init{
+            overflow: initial !important;
+        }
+        .init .d{
+            color:#ccc;
+        }
+        .content{
+            float:left;
+            margin:5px 0;
+            font-size:15px;
+        }
+        .href{
+            font-size:15px;
+                color: #FE7AA5;
+    margin: 5px 0 10px;
+    width: 95%;
+        }
+        .href img{
+            height:18px;
+            margin-right:5px;
+        }
+        .addcolor{
+            color:#FF7AA5 !important;
+        }.huif{
+            color:#ccc;
+        }
+        .init .content img{
+            height:25px !important;
+            width: auto !important;
+            margin-right:0 !important;
+        }
+        .init .content img.tietus{
+            width:40px !important;
+            height:40px !important;
+        }
+        
+    </style>
+</head>
+
+<body>
+    {template:model:top}
+    <div class="wrap  mt70">
+        <ul class="overflow message width1">
+            <li>
+                <a href="{G:INDEX}/index.php?mod=message&type=平台通知">
+                <img src="{G:INDEX}/static/img/web/msg1.png">
+                <p>Thông báo của App</p>
+                </a>
+            </li>
+            <li>
+                <a href="{G:INDEX}/index.php?mod=message&type=官方消息">
+                <img src="{G:INDEX}/static/img/web/msg2.png">
+                <p>Thông tin chính thức</p>
+                </a>
+            </li>
+            <li>
+                <a href="{G:INDEX}/index.php?mod=msga">
+                <img src="{G:INDEX}/static/img/web/msg3.png">
+                <p>Thông báo của tôi</p>
+                </a>
+            </li>
+            <li>
+                <a href="{G:INDEX}/index.php?mod=activity">
+                <img src="{G:INDEX}/static/img/web/msg4.png">
+                <p>Hoạt động chính thức</p>
+                </a>
+            </li>
+            <li>
+                <a href="{G:INDEX}/index.php?mod=app">
+                <img src="{G:INDEX}/static/img/web/msg5.png">
+                <p>Đề xuất của APP</p>
+                </a>
+            </li>
+        </ul>
+        <div class="overflow  pinglun init">
+            <div class="overflow m init">
+                        <a href="javascript:;" class="ipblock"><img class="fl i1" src="{_avatar}"><img class="addlevel2" src="{_kuang}"></a>
+                        <ul class="fl overflow add init">
+                            <li>
+                                <p class="t">{_nickname} <img class="addlevel1" src="{_biaoshi}"></p>
+                                <p class="d">{_ftime}</p>
+                             </li>
+                        </ul>
+                        <div class="content">
+                            {_comment}
+                        </div>
+                        <p class="href fl overhid addcolor"><img src="{G:IMG}/href.png" />Bưu kiện {_title}</p>
+                                <div contenteditable="true" name="textarea" class="textarea">
+                                    
+                                </div>
+                                <div class="rel">
+                                    <div><div class="control fl" rel="1"><img class="smile cb" src="{G:TU}/b1.png">Cảm xúc</div><a style='color:#fff' href="javascript:;" class="fr hf cb {fabiao}" postid="{postid}"  tel2="{tel2}" commentid="{commentid}">Trả lời bình luận</a></div>
+                                    <!---->
+                                    <div class="biaoqing abs hide">
+                                        <p class="index" style="margin-bottom: 4px;"><a class="biaoqing1" href="javascript:;">Cảm xúc</a><a class="tietu" href="javascript:;">Dán ảnh</a></p>
+                                        <ul class="overflow biaoqing2">
+                                            {biaoqing}
+                                        </ul>
+                                        <ul class="overflow hide tietu2">
+                                            {tietu}
+                                        </ul>
+                                    </div>
+                                    <!---->
+                                </div>
+                           
+                    </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $('.control').click(function(){
+                var rel = $(this).attr('rel');
+                rel = parseInt(rel);
+                if(rel==1){
+                    $('.smile').attr('src',"{G:TU}/b2.png");
+                    $('.biaoqing').show();
+                    $(this).attr('rel',0);
+                }else{
+                    $('.smile').attr('src',"{G:TU}/b1.png");
+                    $('.biaoqing').hide();
+                    $(this).attr('rel',1);
+                }
+            });
+            $('.addcolor').click(function(){
+                location.href = "{_href}";
+            });
+            var nickname;
+            $('._fabiao2').click(function(){
+                var content = $('.textarea').html();
+                if($('.textarea').text()=="[回复"+nickname+"]"){
+                    return;
+                }
+                var postid = $(this).attr('postid');
+                var tel2 = $(this).attr('tel2');
+                var commentid = $(this).attr('commentid');
+                if(!content){return;}
+        
+                if(tel2==undefined){
+                    tel2 = '';
+                }
+                if(commentid==undefined){
+                    commentid = '';
+                }
+                
+                $.ajax({
+                		type: "post",
+                		url: "/webajax.php?mod=htmlpinglun",
+                		dataType: 'json',
+                		data: "pinglun="+content+"&postid="+postid+"&tel2="+tel2+"&commentid="+commentid+"&idd={idd}",
+                		success: function(data){
+                		    if(data.err){
+                		        alert(data.err);
+                		        
+                		    }else{
+                		        alert(data.data);
+                		        location.href='{back}';
+                		    }
+                            post_flag =false;
+                        },
+                		error: function() {
+                            post_flag =false;
+                        }
+                   })
+            });
+            var nickname;
+            $('._fabiao').click(function(){
+                var content = $('.textarea').html();
+                if($('.textarea').text()=="[回复"+nickname+"]"){
+                    return;
+                }
+                var postid = $(this).attr('postid');
+                var tel2 = $(this).attr('tel2');
+                var commentid = $(this).attr('commentid');
+                if(!content)        
+                if(tel2==undefined){
+                    tel2 = '';
+                }
+                if(commentid==undefined){
+                    commentid = '';
+                }
+                
+                $.ajax({
+                		type: "post",
+                		url: "/webajax.php?mod=pinglun",
+                		dataType: 'json',
+                		data: "pinglun="+content+"&postid="+postid+"&tel2="+tel2+"&commentid="+commentid+"&idd=6",
+                		success: function(data){
+                		    if(data.err){
+                		        alert(data.err);
+                		        
+                		    }else{
+                		        alert(data.data);
+                		        location.href='{G:INDEX}/index.php?mod=msga';
+                		    }
+                            post_flag =false;
+                        },
+                		error: function() {
+                            post_flag =false;
+                        }
+                   })
+            });
+            $('.textarea').click(function(){
+                var content = $('.textarea').text();
+                if(content=="[回复"+nickname+"]"){
+                    $('.textarea').html("");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Ví điện tử</title>
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <style>
+        html,body,h3,h1,ul,input,p{
+            width: 100%;height:100%;margin:0; padding:0;font-family:'微软雅黑';color:#666;
+            background: #7265E4;
+            color:#fff;
+        }
+        ul,li{
+            list-style: none;
+            margin-bottom: 10px;
+        }
+        li p{
+            display: inline;
+        }
+        header{
+            height:55px;
+            border-bottom:1px solid #efefef;
+            color:#fff;
+            line-height: 55px;text-align: center;
+            font-size:17px;
+        }
+        .wrap{
+            margin:15px;
+        }
+        p.title{
+            font-size:20px;font-weight: bold;
+            border-bottom: 1px dashed #fff;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        p.money{
+            font-size: 18px;
+            padding: 10px 0;
+            font-weight: bold;
+            color:#9dff00;
+        }
+        footer{
+            position: fixed;
+            width:100%;
+            height:56px;
+            bottom:0;left:0;
+            z-index: 1;
+            background: #000;
+        }
+        footer .p{
+            height: 40px;
+            background: red;
+            width: 100px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 7px;
+            top: 8px;
+            right: 20px;
+            position: absolute;
+            font-weight: bold;
+            color:#fff;
+            border:0;
+            font-size:14px;
+        }
+        select{
+            width: 50%;
+            height: 30px;
+            border-radius: 7px;
+        }
+    </style>
+</head>
+<body>
+    <form action="{G:INDEX}/pay/index.php" method="post" >
+    <header>
+        Đang thanh toán
+    </header>
+    <div class="wrap">
+        <p class='title'>Tình trạng hóa đơn</p>
+        <p class="money">Số dư: {money}VND <input type="hidden" name="pay_amount" value="{money}"></p>
+        <ul>
+            <li>Tên sản phẩm: <p>{subject}<input type="hidden" name="pay_productname" value="{subject}"></p></li>
+            <li>Số thứ tự đơn: <p>{payMchOrderNo}<input type="hidden" name="pay_orderid" value="{payMchOrderNo}"></p></li>
+            <li>Thời gian xuất đơn: <p>{time}</p></li>
+            <li>Mô tả sản phẩm : <p>{body}<input type="hidden" name="pay_productdesc" value="{body}"></p></li>
+            <li>Phương thức thanh toán: <select name="bankcode">
+                {option}
+                    
+                </select></li>
+        </ul>
+        <p class="img"></p>
+        <input type="hidden" name="pay_callbackurl" value="{returnUrl}">
+        <input type="hidden" name="pay_notifyurl" value="{notifyUrl}">
+        <input type="hidden" name="pay_applydate" value="{time}">
+        <input type="hidden" name="param" value="{param1}|{param2}">
+    </div>
+    <footer>
+        <button class="pay p" type="submit">Lập tức thanh toán</button>
+    </footer>
+    </form>
+</body>
+</html>
+               

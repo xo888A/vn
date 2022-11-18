@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>{G:TITLE}</title>
+    <link rel="stylesheet" href="{G:CSS}/backstage.css" />
+    <link rel="stylesheet" href="{G:CSS}/font-awesome.min.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/backstage.js"></script>
+</head>
+<body>
+    {template:model:admin:header}
+    {template:model:admin:aside}
+    <div class="wrap">
+        <div class="w100">
+            {template:model:admin:tag}
+            <div class="content">
+                <div class="frame">
+                    <p class="title">Tổng quan</p>
+                    <div class="frmtable">
+                    	<div class="notice">
+			                <div class="note-info">
+			                    <p class="p1 btn1">Hệ thống thông tin</p>
+			                    <p class="pub">Loại hệ thống và số phiên bản: {Hệ thống}</p>
+			                    <p class="pub">{memory}<br></p>
+			                </div>
+			            </div>
+			            <div class="notice">
+			                <div class="note-info">
+			                    <p class="p1 btn1">Thống kê thông tin</p>
+			                </div>
+			            </div>
+
+			            <ul class="tags">
+                            <li class="m l1">
+                                <i class="fa fa-comments-o f"></i>
+                                <div class="details abs">
+                                    <div class="num"> {num1} </div>
+                                    <div class="des"> Số người đã đăng nhập hôm nay </div>
+                                </div>
+                                <p class="abs w100"></p>
+                            </li>
+                            <li class="m l2">
+                                <i class="fa fa-bar-chart f"></i>
+                                <div class="details abs">
+                                    <div class="num"> {num2} </div>
+                                    <div class="des"> Số lượng người dùng mới được thêm vào ngày hôm qua</div>
+                                </div>
+                                <p class="abs w100"></p>
+                            </li>
+                            <li class="m l3">
+                                <i class="fa fa-pagelines f"></i>
+                                <div class="details abs">
+                                    <div class="num"> {num3} </div>
+                                    <div class="des"> Tổng số người dùng </div>
+                                </div>
+                                <p class="abs w100"></p>
+                            </li>
+                            <li class="l4">
+                                <i class="fa fa-gitlab f"></i>
+                                <div class="details abs">
+                                    <div class="num" style="font-size:21px"> Kiểm tra </div>
+                                    <div class="des"> Kiểu điện thoại  </div>
+                                </div>
+                                <p class="abs w100"><a href='{G:INDEX}/admin.php?mod=userlist' class=' block'>Xem thêm<i class='fa fa-arrow-circle-right'></i></a></p>
+                            </li>
+                            <p class="clear"></p>
+                        </ul>
+			            <div class="notice">
+			                <div class="note-info">
+			                    <p class="p1 btn1">Cài đặt thống kê</p>
+			                    <!--<p class="pub">上一次登录时间 : {logtime}</p>-->
+			                    <!--<p class="pub">上一次登录IP : {ip}</p>-->
+			                    <!--<p class="pub">上一次登录地址 : {address}</p>-->
+			                </div>
+			            </div>
+			            <ul class="tags">
+                            <li class="m l1">
+                                <i class="fa fa-comments-o f"></i>
+                                <div class="details abs">
+                                    <div class="num"> {android} </div>
+                                    <div class="des"> Lượt cài đặt Android </div>
+                                </div>
+                                <p class="abs w100"></p>
+                            </li>
+                            <li class="m l2">
+                                <i class="fa fa-bar-chart f"></i>
+                                <div class="details abs">
+                                    <div class="num"> {ios} </div>
+                                    <div class="des"> Lượt cài đặt IOS </div>
+                                </div>
+                                <p class="abs w100"></p>
+                            </li>
+                            <li class="m l3">
+                                <i class="fa fa-pagelines f"></i>
+                                <div class="details abs">
+                                    <div class="num"> {all} </div>
+                                    <div class="des"> Tổng số </div>
+                                </div>
+                                <p class="abs w100"></p>
+                            </li>
+                            <p class="clear"></p>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+</html>

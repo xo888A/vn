@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Trả lời</title>
+    <meta name="keywords" content="关键词" />
+    <meta name="description" content="首页描述" />
+    <link rel="stylesheet" href="{G:CSS}/style.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/index.js"></script>
+    <style>
+        .pinglun img{
+            width: auto !important;
+        }
+        .pinglun .t {
+            font-size: 17px;
+        }
+        .wrap2 .fl ul li img {
+            height: 25px;
+        }
+        
+        .pinglun .i {
+            color: #bbb;
+            font-size: 15px;
+            margin-top: -5px;
+        }
+        .init{
+            overflow: inherit !important;
+        }
+        .fr.fabiao{
+            cursor: pointer !important;
+            color: #fff !important;
+        }
+        .href{
+            font-size:15px;
+                color: #FE7AA5;
+    margin: 5px 0 10px;
+    width: 95%;
+        }
+        .href img{
+            height:18px !important;
+            margin-right:5px !important;
+        }
+        a{
+            cursor: pointer !important;
+        }
+        .addcolor{
+            color:#FF7AA5 !important;
+        }
+        ._fabiao{
+            color:#fff !important;
+        }
+        .init .d{
+            margin-top:10px;
+        }
+        .init .d img{
+            height:25px !important;
+            width: auto !important;
+            margin-right:0 !important;
+        }
+        .tietu2 img{
+            width: 40px !important;
+            height:40px !important;
+        }
+        .pinglun .sh{
+            width:100% !important;
+        }
+        .wrap2 .fl ul li  img.tietus{
+            width:40px !important;
+            height:40px !important;
+        }
+    </style>
+</head>
+
+<body>
+    {template:model:header}
+    <div class="wrap2 overflow">
+        <div class="fl w100">
+            <div class="fl fls">
+                <p class="u"><img src="{avatar}" /></p>
+                <p class="qiandao">Thưởng điểm danh</p>
+                <ul class="fun">
+                    <li><a href="{G:INDEX}/index.php?mod=user"><img src="{G:TU}/u1.png" />Trung tâm thành viên</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=set"><img src="{G:TU}/u2.png" />cài đặt tài khoản</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=wallet"><img src="{G:TU}/u3.png" />Ví của tôi</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=vip"><img src="{G:TU}/u4.png" />Thành viên nạp tiền</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=money"><img src="{G:TU}/u5.png" />Nạp tiền</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=card"><img src="{G:TU}/u6.png" />Đổi mật khẩu thẻ</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=concern"><img src="{G:TU}/u7.png" />Theo dõi của tôi</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=albuy"><img src="{G:TU}/u8.png" />Video đã mua</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=customer"><img src="{G:TU}/u9.png" />Trung tâm CSKH</a></li>
+                    <li  class="selected"><a href="{G:INDEX}/index.php?mod=message"><img src="{G:TU}/u10_.png" />Trung tâm thông báo </a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=shares"><img src="{G:TU}/u11.png" />Kiếm tiền quảng cáo</a></li>
+                    <li class="logout"><a href="{G:INDEX}/index.php?mod=logout "><img src="{G:TU}/u12.png" />Đăng xuất</a></li>
+                </ul>
+            </div>
+           
+            <div class="fl flr">
+                <ul class="overflow message width1">
+                    <li>
+                        <a href="{G:INDEX}/index.php?mod=message&type=平台通知">
+                        <img src="{G:TU}/msg1.png" />
+                        <p>Thông báo của App</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{G:INDEX}/index.php?mod=message&type=官方消息">
+                        <img src="{G:TU}/msg2.png" />
+                        <p>Thông tin chính thức</p>
+                        </a>
+                    </li>
+                    <li class="rel">
+                        <a href="{G:INDEX}/index.php?mod=msga">
+                        <img src="{G:TU}/msg3.png" />
+                        <p>Thông báo của tôi</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{G:INDEX}/index.php?mod=activity">
+                        <img src="{G:TU}/msg4.png" />
+                        <p>Hoạt động chính thức</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{G:INDEX}/index.php?mod=app">
+                        <img src="{G:TU}/msg5.png" />
+                        <p>Đề xuất của APP</p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="pinglun">
+                    
+                    <div class="overflow m init rel">
+                        <a href="{G:INDEX}/index.php?mod=msga" class="returnbtn">Trở lại danh sách</a>
+                        <img class="fl i1" src="{_avatar}"><img class="addlevel2" src="{_kuang}">
+                        <ul class="fl overflow add init">
+                            <li>
+                                <p class="t">{_nickname} <img class="addlevel1" src="{_biaoshi}"></p>
+                                <p class="i">{_ftime}</p>
+                                <div class="d">{_comment}</div>
+                                <p class="href fl overhid"><a href='{_href}' class="addcolor"><img src="{G:IMG}/href.png">bưu kiện: {_title}</a></p>
+                                <ul class="overflow init"><li>
+                                    
+                                    <div class="fl sh">
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        <div contenteditable="true" name="textarea" class="textarea"></div>
+                <div class="bq rel">
+                    <div><p class="control" rel="1"><img class="b c" src="{G:TU}/b1.png">Biểu cảm</p><a postid="{postid}" style="color:#fff" class="fr {fabiao}" href="javascript:;" tel2="{tel2}" commentid="{commentid}">Trả lời bình luận</a></div>
+                    <div class="biaoqing abs hide">
+                        <p class="index" style="margin-bottom: 4px;"><a class="biaoqing1" href="javascript:;">Biểu cảm</a><a class="tietu" href="javascript:;">Dán ảnh</a></p>
+                        <ul class="overflow biaoqing2">
+                            {biaoqing}
+                        </ul>
+                        <ul class="overflow hide tietu2">
+                            {tietu}
+                        </ul>
+                    </div>
+                </div>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    </div>
+                                    <div class="clear"></div>
+                                </li></ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+                
+                
+
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    {template:model:footer}
+     <script>
+        $(function(){
+            
+            $('.control').click(function(){
+                var rel = $(this).attr('rel');
+                rel = parseInt(rel);
+                if(rel==1){
+                    $('.c.b').attr('src',"{G:TU}/b2.png");
+                    $('.biaoqing').show();
+                    $(this).attr('rel',0);
+                }else{
+                    $('.c.b').attr('src',"{G:TU}/b1.png");
+                    $('.biaoqing').hide();
+                    $(this).attr('rel',1);
+                }
+            });
+            var nickname;
+            $('._fabiao').click(function(){
+                var content = $('.textarea').html();
+                if($('.textarea').text()=="[回复"+nickname+"]"){
+                    return;
+                }
+                var postid = $(this).attr('postid');
+                var tel2 = $(this).attr('tel2');
+                var commentid = $(this).attr('commentid');
+                if(!content){return;}
+        
+                if(tel2==undefined){
+                    tel2 = '';
+                }
+                if(commentid==undefined){
+                    commentid = '';
+                }
+                
+                $.ajax({
+                		type: "post",
+                		url: "/webajax.php?mod=pinglun",
+                		dataType: 'json',
+                		data: "pinglun="+content+"&postid="+postid+"&tel2="+tel2+"&commentid="+commentid+"&idd={idd}",
+                		success: function(data){
+                		    if(data.err){
+                		        alert(data.err);
+                		        
+                		    }else{
+                		        alert(data.data);
+                		        location.href='{back}';
+                		    }
+                            post_flag =false;
+                        },
+                		error: function() {
+                            post_flag =false;
+                        }
+                   })
+            });
+            $('.textarea').click(function(){
+                var content = $('.textarea').text();
+                if(content=="[回复"+nickname+"]"){
+                    $('.textarea').html("");
+                }
+            });
+            
+            
+            
+            var nickname;
+            $('._fabiao2').click(function(){
+                var content = $('.textarea').html();
+                if($('.textarea').text()=="[回复"+nickname+"]"){
+                    return;
+                }
+                var postid = $(this).attr('postid');
+                var tel2 = $(this).attr('tel2');
+                var commentid = $(this).attr('commentid');
+                if(!content){return;}
+        
+                if(tel2==undefined){
+                    tel2 = '';
+                }
+                if(commentid==undefined){
+                    commentid = '';
+                }
+                
+                $.ajax({
+                		type: "post",
+                		url: "/webajax.php?mod=htmlpinglun",
+                		dataType: 'json',
+                		data: "pinglun="+content+"&postid="+postid+"&tel2="+tel2+"&commentid="+commentid+"&idd={idd}",
+                		success: function(data){
+                		    if(data.err){
+                		        alert(data.err);
+                		        
+                		    }else{
+                		        alert(data.data);
+                		        location.href='{back}';
+                		    }
+                            post_flag =false;
+                        },
+                		error: function() {
+                            post_flag =false;
+                        }
+                   })
+            });
+            
+            
+            
+            
+            
+            
+        });
+        
+    </script>
+</body>
+
+</html>

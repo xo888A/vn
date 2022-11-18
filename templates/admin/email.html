@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Cài đặt Email</title>
+    <link rel="stylesheet" href="{G:CSS}/backstage.css" />
+    <link rel="stylesheet" href="{G:CSS}/font-awesome.min.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/backstage.js"></script>
+    <style>
+        .frmtable_content td.r input{
+            margin-bottom:5px;width:10%
+        }
+    </style>
+</head>
+<body>
+    {template:model:admin:header}
+    {template:model:admin:aside}
+    <div class="wrap">
+        <div class="w100">
+            {template:model:admin:tag}
+            <div class="content">
+        		<div class="frame">
+              <!--      <p class="title">Cài đặt SMS</p>-->
+              <!--      <div class="notice">-->
+		            <!--    <div class="note-info">-->
+		            <!--        <p class="p1 btn3">Nhắc nhở</p>-->
+		            <!--        <p class="pub"><a class="alw" target="_blank" href="https://user.ihuyi.com/new/sms/overview">点击前往互亿无线</a> <a target="_blank" class="aly" href="https://user.ihuyi.com/new/sms/guide">如何修改短信签名?=>1.7 短信签名</a></p>-->
+		            <!--   </div>-->
+		            <!--</div>-->
+                	<p class="title">Cài đặt Email</p>
+                    <div class="frmtable_content">
+                		<table class="w100">
+                			<tbody>
+                			<tr>
+                				<td>param1</td>
+                				<td><input value="{param1}" name="param1" placeholder=""></td>
+                			</tr>
+                			<tr>
+                				<td>param2</td>
+                				<td><input value="{param2}" name="param2" placeholder=""></td>
+                			</tr>
+                			<tr>
+                				<td>param3</td>
+                				<td><input value="{param3}" name="param3" placeholder=""></td>
+                			</tr>
+                			<tr>
+                				<td>param4</td>
+                				<td><input value="{param4}" name="param4" placeholder=""></td>
+                			</tr>
+                			<tr>
+                				<td>param5</td>
+                				<td><input value="{param5}" name="param5" placeholder=""></td>
+                			</tr>
+                			<tr>
+                				<td></td>
+                				<td><a href="javascript:;" class="btn submit" rel="updateemail"><i class="fa fa-edit"></i>Lưu</a></td>
+                			</tr>
+                		</tbody></table>
+                	</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

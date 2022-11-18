@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>{G:TITLE}</title>
+    <link rel="stylesheet" href="{G:CSS}/backstage.css" />
+    <link rel="stylesheet" href="{G:CSS}/font-awesome.min.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/backstage.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    {template:model:admin:header}
+    {template:model:admin:aside}
+    <div class="wrap">
+        <div class="w100">
+            {template:model:admin:tag}
+            <div class="content">
+        		<div class="frame">
+                    <p class="title">Thay thế thẻ</p>
+                    <div class="frmtable_content">
+                        <script>
+                            $(function(){
+                                $("select[name=cardtype]").change(function(){
+                                    var data = $(this).val();
+                                    if(data=='2'){
+                                        $('.tr1').show();
+                                    }else{
+                                        $('.tr1').hide();
+                                    }
+                                });
+                            });
+                        </script>
+                		<table class="w100">
+                			<tbody><tr>
+                				<td>Thể loại</td>
+                				<td class="search">
+                				    <select name="cardtype">
+                                        <option value="1">Tiền vàng</option>
+                                        <option value="2">Thành viên</option>
+                                    </select>
+                				</td>
+                			</tr>
+                			<tr>
+                				<td>Số tiền vàng hoặc số ngày VIP</td>
+                				<td><input name="cardnum" placeholder="Nếu VIP được tạo, bất kể là bao nhiêu ngày, tag sẽ được thống nhất thành đồng"></td>
+                			</tr>
+                			
+                			<tr class="tr1 hide">
+                				<td>Cấp độ VIP:</td>
+                				<td><input name="mylevel" placeholder="Điền vào một số nguyên từ 1-6"></td>
+                			</tr>
+                			<tr class="tr1 hide">
+                				<td>Số lượng xu VIP:</td>
+                				<td><input name="jinbinum" placeholder=""></td>
+                			</tr>
+                			<tr>
+                				<td>Tạo bao nhiêu thẻ đổi thưởng</td>
+                				<td><input name="num" placeholder="Không tạo quá nhiều mỗi lần"></td>
+                			</tr>
+                			<tr>
+                				<td></td>
+                				<td><a href="javascript:;" class="btn submit" rel="addcard"><i class="fa fa-plus-square-o"></i>Tạo</a></td>
+                			</tr>
+                		</tbody></table>
+                	</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

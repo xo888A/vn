@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>{G:TITLE}</title>
+    <link rel="stylesheet" href="{G:CSS}/backstage.css" />
+    <link rel="stylesheet" href="{G:CSS}/font-awesome.min.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/backstage.js"></script>
+    <link rel="stylesheet" href="{G:PLUGINS}/themes/default/default.css" />
+	<link rel="stylesheet" href="{G:PLUGINS}/plugins/code/prettify.css" />
+	<script charset="utf-8" src="{G:PLUGINS}/kindeditor-all.js"></script>
+	<script charset="utf-8" src="{G:PLUGINS}/lang/zh-CN.js"></script>
+	<script charset="utf-8" src="{G:PLUGINS}/plugins/code/prettify.js"></script>
+	
+    <script type="text/javascript">
+        $(function(){
+            
+            KindEditor.ready(function(K) {
+			var editor1 = K.create('.textarea', {
+				cssPath : '{G:PLUGINS}/plugins/code/prettify.css',
+				uploadJson : '{G:PLUGINS}/php/upload_json.php',
+				fileManagerJson : '{G:PLUGINS}/php/file_manager_json.php',
+				allowFileManager : true,
+				afterCreate : function() {
+				    this.sync();
+				},
+				afterBlur:function(){
+				    this.sync();
+				}
+			});
+			prettyPrint();
+		});
+        });
+    </script>
+    <style>
+        .textarea{
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+    {template:model:admin:header}
+    {template:model:admin:aside}
+    <div class="wrap">
+        <div class="w100">
+            {template:model:admin:tag}
+            <div class="content">
+        		<div class="frame">
+                    <p class="title">Đăng tải trang chủ thông báo/Thông tin chính thức</p>
+                    <div class="frmtable_content">
+                		<table class="w100">
+                			<tbody>
+                			<tr>
+                				<td>Thể loại thông tin</td>
+                				<td class="rel">
+                					<input readonly="true" value="{mtype}" class="pub_select" name="mtype" placeholder="点击选择消息类型">
+                					<ul class="abs hide">
+                					    <li value="1">Trang chủ thông báo</li>
+                					    <li value="2">Thông tin chính thức</li>
+                					</ul>
+                				</td>
+                			</tr>
+                			<tr>
+                				<td>Thời gian đăng tải</td>
+                				<td><input  name="ftime" class='' value="{ftime}"></td>
+                			</tr><input type="hidden" value="{id}" name="id" />
+                			<tr>
+                				<td>Nội dung thông tin</td>
+                				<td><input  name="content" class='textarea' value="{content}"></td>
+                			</tr>
+                			
+                			<tr>
+                				<td></td>
+                				<td>{button}</td>
+                			</tr>
+                		</tbody></table>
+                	</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

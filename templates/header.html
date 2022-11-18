@@ -1,0 +1,38 @@
+<header class="wrap rel phonehide">
+        <img class="logo fl" src="{G:TU}/logo.png" />
+        <ul class="overflow fl">
+            <li class="{a}"><span></span><a href="{G:INDEX}">Trang chủ</a></li>
+            <li class="show"><span></span><span></span><a href="javascript:;">Phân loại</a></li>
+            <li class="{c}"><span></span><a href="{G:INDEX}/index.php?mod=recommend">Đè xuất</a></li>
+            <li class="{d}"><span></span><a href="{G:INDEX}/index.php?mod=type">Chủ đề</a></li>
+            <li class="{e}"><span></span><a href="{G:INDEX}/index.php?mod=userlist">Blogger</a></li>
+            <li class="{f}"><span></span><a href="{G:INDEX}/index.php?mod=videolist">Video</a></li>
+            <li class="{g}"><span></span><a href="{G:INDEX}/index.php?mod=organlist">Cộng đồng</a></li>
+            <li class="{h}"><span></span><a href="{G:INDEX}/index.php?mod=rank">Bảng xếp hạng</a></li>
+        </ul>
+        <p class="download fl rel {i}"><span></span><img src="{G:TU}/download.png" /><a href="{G:INDEX}/index.php?mod=download">Tải APP</a></p>
+        <form class="fl rel" action="{G:INDEX}/index.php"><img class="abs search" style="left:20px" src="{G:TU}/search.png"><input type="hidden" name="mod" value="search" /><div class='mysearch-wrap'><input class="input fl mysearch" name="keyword" placeholder="Tìm kiếm" /><button class="submit" type="submit">Tìm kiếm</button></div></form>
+        <p class="fr reg">{usermsg}</p>
+        <ul class="type overflow abs hide">
+            {topic}
+        </ul>
+        <div class="clear"></div>
+</header>
+{sw}
+
+<script>
+    $(function(){
+        $('.menu').click(function(){
+            $('.mask').show();
+        });
+        $('.mask .cs').click(function(){
+            $('.mask').hide();
+        });
+        $('.mysearch,.submit').focus(function(){
+          $('.mysearch').attr('style',"border:2px solid #FF7BA6");
+          $('.submit').show();
+        });
+        
+    });
+</script>
+

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="{G:CSS}/style.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/index.js"></script>
+    <script src="{G:JS}/captcha.js"></script>
+<!--    <link rel="stylesheet" href=
+"https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+		integrity=
+"sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+		crossorigin="anonymous">-->
+        
+</head>
+
+<body onload="generatec()">
+    {template:model:header}
+    <div class="wrap">
+        <div class="fm">
+            <p class="center">Đăng nhập</p>
+            <input class="fmbtn" name="tel" minlength="5" maxlength="20" placeholder="Tài khoản" value="" />
+            <input class="fmbtn" value="" name="pass" minlength="5" maxlength="20" placeholder="Mật khẩu" />
+            
+            <div>
+                <div id="user-input" style="width: 67%;" class="inline">
+                    <input type="text" class="fmbtn" id="submit-cap"
+                        placeholder="Mã xác nhận" />
+                </div>
+<!--            
+                <div class="inline" style="margin: 0 10px;" onclick="generatec()">
+                    <i class="fas fa-sync"></i>
+                </div>-->
+             <div class="inline"  onclick="generatec()">
+                    <div id="image-cap" class="" selectable="False">
+                </div>
+                
+                </div>
+            </div>
+            <!--<p class="right"><a href="{G:INDEX}/findpass.html">Quên mật khẩu?</a></p>-->
+            <p class="pubbtn"><a href="javascript:;" class="lgin" >Đăng nhập</a></p>
+            <p class="pubbtn" style="background:#F0ABA6"><a href="{G:INDEX}/reg.html">Đăng ký nhanh trong 10s</a></p>
+            <div class="center2">
+                <div>
+                    <a href="{G:INDEX}/index.php?mod=customer">
+                    <img src="{G:TU}/form1.png" />
+                    <span>Trung tâm CSKH</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="{G:INDEX}/download.html">
+                    <img src="{G:TU}/form2.png" />
+                    <span>Tải APP</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="{tougao}" target="_blank">
+                    <img src="{G:TU}/form3.png" />
+                    <span>Đóng góp kiếm tiền</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>

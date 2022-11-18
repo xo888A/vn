@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <title>Chia sẻ</title>
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/copy.js"></script>
+    <script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8"></script> 
+</head>
+<body>
+    <p class="d7heaven"></p>
+    <p class="download" style="font-size: 80px;font-weight: bold;color: red;text-align: center;">Tải về</p>
+    <a href="{G:INDEX}">Về trang chủ</a>
+    <p class="card" style="display:none">{card}</p>
+    <script>
+    var ip  = returnCitySN.cip;
+    var cid  = returnCitySN.cid;
+    var cname  = returnCitySN.cname;
+    var clipboard = new Clipboard('.download', {
+        text: function() {
+            return $('.card').text();
+        }
+    });
+    clipboard.on('success',
+    function(e) {
+        $.ajax({
+    		type: "post",
+    		url: "{G:INDEX}/appajax.php?mod=getshare",
+    		dataType: 'html',
+    		data: "ip="+ip+"&cid="+cid+"&cname="+cname+"&card="+$('.card').text(),
+    		success: function(data){
+    		    window.open("{G:INDEX}/app.apk");
+            },
+    		
+       })
+    });
+    </script>
+</body>
+</html>
+

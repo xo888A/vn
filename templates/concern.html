@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Theo dõi của tôi</title>
+    <link rel="stylesheet" href="{G:CSS}/style.css" />
+    <script src="{G:JS}/jquery-1.8.3.min.js"></script>
+    <script src="{G:JS}/index.js"></script>
+
+</head>
+
+<body>
+    {template:model:header}
+    <div class="wrap2 overflow">
+        <div class="fl w100">
+            <div class="fl fls">
+                <p class="u"><img src="{avatar}" /></p>
+                <p class="qiandao">Điểm danh nhận xu vàng</p>
+                <ul class="fun">
+                    <li><a href="{G:INDEX}/index.php?mod=user"><img src="{G:TU}/u1.png" />Trung tâm hội viên</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=edit"><img src="{G:TU}/u7.png" />Quản lý tác phẩm</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=set"><img src="{G:TU}/u2.png" />Cài đặt tài khoản</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=wallet"><img src="{G:TU}/u3.png" />Ví tiền của tôi</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=vip"><img src="{G:TU}/u4.png" />Hội viên nạp tiền</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=money"><img src="{G:TU}/u5.png" />Nạp xu vàng</a></li>
+                    <!--<li><a href="{G:INDEX}/index.php?mod=card"><img src="{G:TU}/u6.png" />Đổi mã thẻ</a></li>-->
+                    <li  class="selected"><a href="{G:INDEX}/index.php?mod=concern"><img src="{G:TU}/u7_.png" />Theo dõi của tôi</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=albuy"><img src="{G:TU}/u8.png" />Video đã mua</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=customer"><img src="{G:TU}/u9.png" />Trung tâm Chăm sóc khách hàng</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=message"><img src="{G:TU}/u10.png" />Trung tâm thông báo</a></li>
+                    <li><a href="{G:INDEX}/index.php?mod=shares"><img src="{G:TU}/u11.png" />Quảng cáo kiếm tiền</a></li>
+                    <li class="logout"><a href="{G:INDEX}/index.php?mod=logout "><img src="{G:TU}/u12.png" />Đăng xuất tài khoản</a></li>
+                </ul>
+            </div>
+            <div class="fl flr">
+               
+                <div class="pubtit">
+                    <p rel="u2"><span></span>Theo dõi của tôi</p>
+                </div>
+                <ul class="overflow myfollow">
+                    {data}
+                </ul>
+                {page}
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    {template:model:footer}
+</body>
+
+</html>
