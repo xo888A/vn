@@ -4,9 +4,9 @@
 	################################################
 	if(!defined('CW')){exit('Access Denied');}
     $_config = array(
-        'dbhost'=>'10.233.2.34;port=3306',
-        'dbuser'=>'root',#用户
-        'dbpw'=>'2EQVxLaxoLel7z19',#密码
+        'dbhost'=>'192.187.38.231',
+        'dbuser'=>'vn',#用户
+        'dbpw'=>'z3erBEPDdzFHyPWs',#密码
         'dbname'=>'vn',#项目中当前数据库
     );
 ?>
